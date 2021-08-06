@@ -1,0 +1,20 @@
+cinema
+hospital
+police
+post office
+station
+airport
+shop
+pharmacy
+market
+office
+company
+factory
+square
+street
+road
+crossroads
+stop
+sidewalk
+path
+garden

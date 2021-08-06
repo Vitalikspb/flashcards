@@ -1,0 +1,21 @@
+boyut
+fiyat
+para
+nakit
+indirim
+banka hesabı
+Puan
+İpucu
+teslim
+kredi kartı ile ödeme
+toplam tutar
+pandispanyalı tatlı
+para birimi
+eşanjör
+Döviz Kurları
+komisyon
+hesap bakiyesi
+yetersiz bakiye
+ödeme hatası
+ödeme yapıldı
+başarıyla ödendi

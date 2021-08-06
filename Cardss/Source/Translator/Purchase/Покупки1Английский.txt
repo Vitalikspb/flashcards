@@ -1,0 +1,21 @@
+the size
+price
+money
+cash
+discount
+Bank account
+score
+tip
+surrender
+payment by credit card
+total amount
+trifle
+currency
+exchanger
+Exchange Rates
+commission
+account balance
+insufficient funds
+payment error
+payment made
+successfully paid

@@ -1,0 +1,24 @@
+tiempo
+hermosa
+horrible
+frío
+caliente
+cálido
+cielo
+el sol
+lluvia
+viento
+nube
+nieve
+solar
+lluvioso
+Ventoso
+nublado
+brillante
+nieve
+Está lloviendo
+nevando
+soplar
+brillar
+está calentando
+cambio

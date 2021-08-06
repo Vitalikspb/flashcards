@@ -1,0 +1,14 @@
+tableau
+chaise
+fauteuil
+sofa
+lit
+(penderie
+armoire
+étagère
+miroir
+tapis
+réfrigérateur
+four micro-onde
+four
+cuisinière

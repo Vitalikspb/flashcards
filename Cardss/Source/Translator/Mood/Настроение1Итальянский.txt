@@ -1,0 +1,19 @@
+sensazione
+umore
+lieto
+triste
+irritato
+contento
+infelice
+arrabbiato
+vigoroso
+eccitato
+annoiato
+stanco (condizione)
+spaventato (stato)
+preoccupato (preoccupato)
+perplesso
+interessato
+essere
+sentire
+assomigliare

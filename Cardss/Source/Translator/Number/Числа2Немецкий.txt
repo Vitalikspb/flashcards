@@ -1,0 +1,23 @@
+vierzig
+fünfzig
+sechzig
+siebzig
+achtzig
+neunzig
+einhundert
+eintausend
+zuerst
+zweite
+der dritte
+vierte
+fünfte
+zwei
+drei
+vier
+fünf
+zuerst
+letzte
+zuerst vom Ende
+Ziffer
+Nummer
+Auftrag

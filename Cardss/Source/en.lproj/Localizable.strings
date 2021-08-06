@@ -1,0 +1,579 @@
+
+
+// MARK: - Shared
+// Заново (очистить экран и начать заново заполнять форму)
+"Shared.anew" = "Clear";
+// Готово
+"Shared.done" = "Done";
+// Закрыть
+"Shared.close" = "Close";
+// ок
+"Shared.ok" = "Ok";
+// ошибка
+"Shared.error" = "Error";
+// Сохранить
+"Shared.save" = "Save";
+// Удалить
+"Shared.delete" = "Delete";
+// Terms of Use
+"Shared.termsOfUse" = "Terms Of Use";
+// Privacy Policy
+"Shared.privacyPolicy" = "Privacy Policy";
+// Предупреждение (предупрежление об ошибке)
+"Shared.warning" = "Warning";
+// Ошибка оплаты
+"Shared.errorWithPurchase" = "Payment error";
+// попробуйте немного позже
+"Shared.tryAgainLater" = "Try a little later";
+// Продолжить
+"Shared.continueBuyButton" = "Continue";
+// Восстановить (покупки)
+"Shared.restore" = "Restore";
+// Без рекламы
+"Shared.noAds" = "Without advertising";
+// Использование библиотеки (библиотека карточек со словами)
+"Shared.useLibrary" = "Using the library";
+// Все функции (Доступны все функции)
+"Shared.workWithAllFunction" = "All functions";
+// Название темы
+"Shared.defaultTheme" = "Topic name";
+// Название коллекции (коллекция карточек)
+"Shared.noThemeName" = "Collection name";
+// Количество изучаемых слов должно быть равно 5 или больше
+"Shared.errorCountOfNewWords" = "The number of learned words must be 5 or more";
+// Время обучения (время обучения того или иного материала)
+"Shared.educationTime" = "Training time";
+// час
+"Shared.hour" = "Hour";
+// минут
+"Shared.minute" = "Minutes";
+// Количество повторений
+"Shared.repeatsCount" = "Number of repetitions";
+// Все слова
+"Shared.allWords" = "All words";
+// Выученные слова
+"Shared.learnedWords" = "Learned words";
+// минуты -> м. ( сокращение от слова минуты желательно использовать одну букву)
+"Shared.minuteShort" = "m";
+// час -> ч ( сокращение от слова час желательно использовать одну букву)
+"Shared.hourShort" = "h";
+// за все время
+"Shared.allTimeEducation" = "During all this time";
+// за 7 дней
+"Shared.sevenDayEducation" = "In 7 days";
+// Получить премиум
+"Shared.getPremium" = "Get premium";
+
+
+
+// MARK: - Languages
+// Русский
+"Languages.russian" = "Russian";
+// Английский
+"Languages.english" = "English";
+// Немецкий
+"Languages.german" = "German";
+// Итальянский
+"Languages.italy" = "Italian";
+// Испанский
+"Languages.spanish" = "Spanish";
+// Китайский
+"Languages.chine" = "Chinese";
+// Арабский
+"Languages.arabic" = "Arabic";
+// Португальский
+"Languages.portugal" = "Portuguese";
+// Индонезийский
+"Languages.indonezian" = "Indonesian";
+// Французский
+"Languages.french" = "French";
+// Японский
+"Languages.japan" = "Japanese";
+// Шведский
+"Languages.swedish" = "Swedish";
+// Турецкий
+"Languages.turkish" = "Turkish";
+// Корейский
+"Languages.korean" = "Korean";
+// Вьетнамский
+"Languages.vietman" = "Vietnamese";
+// Тайский
+"Languages.thai" = "Thai";
+
+
+
+// MARK: - AddNewWordsVC
+// Введите тему
+"AddNewWordsVC.enterTheme" = "Enter a topic";
+// библиотека
+"AddNewWordsVC.library" = "Library";
+// Иностранный язык
+"AddNewWordsVC.foreignLanguage" = "Foreign language";
+// Родной язык
+"AddNewWordsVC.nativeLanguage" = "Native language";
+// Разное количество строк
+"AddNewWordsVC.countOfLinesError" = "Different number of lines";
+// Новые
+"AddNewWordsVC.new" = "New";
+// Название
+"AddNewWordsVC.name" = "Title";
+// Добавить
+"AddNewWordsVC.add" = "Add";
+// Изменить
+"AddNewWordsVC.change" = "Change";
+// Введите название
+"AddNewWordsVC.setName" = "Enter the title";
+// Введите слова в верхнее поле
+"AddNewWordsVC.setNativeWords" = "Enter words in the top field";
+// Введите слова в нижнее поле
+"AddNewWordsVC.setForeignWords" = "Enter words in the bottom field";
+// Часть 1 (другими словами часть какого то раздела - первая часть, вторая часть и тд)
+"AddNewWordsVC.beginer" = "Part 2";
+// Часть 2
+"AddNewWordsVC.middle" = "Part 3";
+// Часть 3
+"AddNewWordsVC.middlePlus" = "Part 4";
+// Часть 4
+"AddNewWordsVC.advanced" = "Part 5";
+// Часть 5
+"AddNewWordsVC.advancedPlus" = "Part 6";
+
+
+
+
+
+// MARK: - CardsVC
+// Редактирование
+"CardsVC.addNewCards" = "Editing";
+// Добавить коллекцию
+"CardsVC.edit" = "Add collection";
+// Название
+"CardsVC.name" = "Title";
+// Дата
+"CardsVC.date" = "Date";
+
+
+
+
+
+
+// MARK: - StatisticsVC
+// Статистика
+"StatisticsVC.statistic" = "Statistics";
+// Выученные слова
+"StatisticsVC.learnedWords" = "Learned words";
+// Время обучения
+"StatisticsVC.educationTime" = "Studying time";
+// Повторения
+"StatisticsVC.repeats" = "Repetitions";
+// слов
+"StatisticsVC.word" = "Words";
+
+
+
+
+
+
+// MARK: - SettingVC
+// Показывать подсказки
+"SettingVC.showHints" = "Show hints";
+// Цвет темы
+"SettingVC.themeColor" = "Theme color";
+// голос (диктор)
+"SettingVC.voice" = "Voice";
+// Оценить ( оценить приложение в магазине)
+"SettingVC.estimate" = "Rate";
+// Поделиться ( поделиться приложение с другом)
+"SettingVC.share" = "Share";
+// Поддержка ( написать в поддержку)
+"SettingVC.support" = "Support";
+// Автоматическая тема ( тема подразумевается приложение будет светлое или темное)
+"SettingVC.unspecified" = "Automatic theme";
+// Темная (тема приложениея)
+"SettingVC.dark" = "Dark";
+// Светлая (тема приложениея)
+"SettingVC.light" = "Light";
+// Настройки
+"SettingVC.settings" = "Settings";
+// Аккаунт
+"SettingVC.account" = "Account";
+
+// Случайный порядок карточек
+"SettingVC.randomList" = "Random order of cards";
+// Тест или карточки (Учить слова тестом или карточкой)
+"SettingVC.testOrCards" = "Test or cards";
+// Обучение
+"SettingVC.leanrOfCards" = "Learning";
+// Какую сторону учим
+"SettingVC.whichCardDoYouLearn" = "Which side to teach";
+// Верхнюю ( учим верхнюю карточку)
+"SettingVC.left" = "Top";
+// Нижнюю ( учим нижнюю карточку)
+"SettingVC.right" = "Bottom";
+// Случайную ( учим случайную карточку)
+"SettingVC.random" = "Random";
+// Ночной режим
+"SettingVC.nightMode" = "Night mode";
+// Уведомления
+"SettingVC.notifications" = "Notifications";
+
+
+
+
+
+
+// MARK: - NotificationVC
+// Укажите день недели
+"NotificationVC.errorDay"  = "Specify the day of the week";
+// Введите название
+"NotificationVC.errorName" = "Enter the title";
+// Уведомления ( имеется в виду появляющиеся уведомления в приложении)
+"NotificationVC.notification" = "Notifications";
+// Название уведомления
+"NotificationVC.name" = "Notification name";
+// Введите название уведомления
+"NotificationVC.nameError" = "Enter a name for the notification";
+// Понедельник
+"NotificationVC.monday" = "Monday";
+// Вторник
+"NotificationVC.tuesday" = "Tuesday";
+// Среда
+"NotificationVC.wednesday" = "Wednesday";
+// Четверг
+"NotificationVC.thursday" = "Thursday";
+// Пятница
+"NotificationVC.friday" = "Friday";
+// Суббота
+"NotificationVC.saturday" = "Saturday";
+// Воскресенье
+"NotificationVC.sunday" = "Sunday";
+// пн (сокращение от дня недели)
+"NotificationVC.mondayShort"         = "Mon";
+// вт (сокращение от дня недели)
+"NotificationVC.tuesdayShort"        = "Tue";
+// ср (сокращение от дня недели)
+"NotificationVC.wednesdayShort"      = "Wed";
+// чт (сокращение от дня недели)
+"NotificationVC.thursdayShort"       = "Thu";
+// пт (сокращение от дня недели)
+"NotificationVC.fridayShort"         = "Fri";
+// сб (сокращение от дня недели)
+"NotificationVC.saturdayShort"       = "Sat";
+// Вс (сокращение от дня недели)
+"NotificationVC.sundayShort" = "Sun";
+// Пора учить карточки
+"NotificationVC.notificationString1" = "Time to learn flashcards!";
+// Давно тебя не видели
+"NotificationVC.notificationString2" = "We haven't seen you for a long time!";
+// Учить карточки
+"NotificationVC.notificationString3" = "Learn flashcards!";
+// Сейчас начнется обучение
+"NotificationVC.notificationString4" = "Training starts now!";
+// Есть пару минут для обучения
+"NotificationVC.notificationString5" = "Have a couple of minutes to learn?";
+// Давай учиться
+"NotificationVC.notificationString6" = "Let's learn!";
+// Новые слова ждут тебя
+"NotificationVC.notificationString7" = "New words are waiting for you!";
+
+
+
+
+
+
+
+// MARK: - EducationVC
+// обучение
+"EducationVC.education" = "Training";
+// начать
+"EducationVC.start" = "Start";
+
+
+
+
+
+// MARK: - AddPackOfCardToLearnVC
+// Выбрать карточки
+"AddPackOfCardToLearnVC.chooseForLearning" = "Select cards";
+
+
+
+
+
+// MARK: - ChooseGroupOfCards
+// - MARK: ChooseGroupOfCards
+
+
+// Родственники
+"ChooseGroupOfCards.family" = "Relatives";
+// погода
+"ChooseGroupOfCards.wheather" = "Weather";
+// внешность 1
+"ChooseGroupOfCards.appearance1" = "Appearance part 1";
+// внешность 2
+"ChooseGroupOfCards.appearance2" = "Appearance part 2";
+// характер
+"ChooseGroupOfCards.character" = "Character";
+// настроение
+"ChooseGroupOfCards.mood" = "Mood";
+// мой день
+"ChooseGroupOfCards.myDay" = "My day";
+// школа
+"ChooseGroupOfCards.school" = "School";
+// хобби
+"ChooseGroupOfCards.hobby" = "Hobby";
+// книги 1
+"ChooseGroupOfCards.books1" = "Books part 1";
+// книги 2
+"ChooseGroupOfCards.books2" = "Books part 2";
+// книги 3
+"ChooseGroupOfCards.books3" = "Books part 3";
+// еда 1
+"ChooseGroupOfCards.food1" = "Food part 1";
+// еда 2
+"ChooseGroupOfCards.food2" = "Food part 2";
+// еда 3
+"ChooseGroupOfCards.food3" = "Food part 3";
+// еда 4
+"ChooseGroupOfCards.food4" = "Food part 4";
+// еда 5
+"ChooseGroupOfCards.food5" = "Food part 5";
+// одежда 1
+"ChooseGroupOfCards.clother1" = "Clothes part 1";
+// одежда 2
+"ChooseGroupOfCards.clother2" = "Clothes part 2";
+// природа 1
+"ChooseGroupOfCards.nature1" = "Nature часть 1";
+// природа 2
+"ChooseGroupOfCards.nature2" = "Nature часть 2";
+// путешествие
+"ChooseGroupOfCards.travel" = "Journey";
+// вечеринки
+"ChooseGroupOfCards.party" = "Party";
+// Род занятий
+"ChooseGroupOfCards.job1" = "Occupation часть 1";
+// Род занятий
+"ChooseGroupOfCards.job2" = "Occupation часть 2";
+// Род занятий
+"ChooseGroupOfCards.job3" = "Occupation часть 3";
+// Спорт
+"ChooseGroupOfCards.sport" = "Sports";
+// Дом 1
+"ChooseGroupOfCards.home1" = "House";
+// Мебель 1
+"ChooseGroupOfCards.home2" = "Furniture";
+// города 1
+"ChooseGroupOfCards.city1" = "Cities часть 1";
+// города 2
+"ChooseGroupOfCards.city2" = "Cities часть 2";
+// города 3
+"ChooseGroupOfCards.city3" = "Cities часть 3";
+
+// глаголы 1
+"ChooseGroupOfCards.verb1" = "Verbs часть 1";
+// глаголы 2
+"ChooseGroupOfCards.verb2" = "Verbs часть 2";
+// глаголы 3
+"ChooseGroupOfCards.verb3" = "Verbs часть 3";
+// глаголы 4
+"ChooseGroupOfCards.verb4" = "Verbs часть 4";
+
+// другие 1
+"ChooseGroupOfCards.other1" = "Other часть 1";
+// другие 2
+"ChooseGroupOfCards.other2" = "Other часть 2";
+// другие 3
+"ChooseGroupOfCards.other3" = "Other часть 3";
+// другие 4
+"ChooseGroupOfCards.other4" = "Other часть 4";
+// другие 5
+"ChooseGroupOfCards.other5" = "Other часть 5";
+// прилагательные 1
+"ChooseGroupOfCards.adjective1" = "Adjectives часть 1";
+// прилагательные 2
+"ChooseGroupOfCards.adjective2" = "Adjectives часть 2";
+// прилагательные 3
+"ChooseGroupOfCards.adjective3" = "Adjectives часть 3";
+// прилагательные 4
+"ChooseGroupOfCards.adjective4" = "Adjectives часть 4";
+// прилагательные 5
+"ChooseGroupOfCards.adjective5" = "Adjectives часть 5";
+// Цвет
+"ChooseGroupOfCards.color" = "Color";
+// События
+"ChooseGroupOfCards.event" = "Events";
+// Цифры 1
+"ChooseGroupOfCards.number1" = "Numbers часть 1";
+// Цифры 2
+"ChooseGroupOfCards.number2" = "Numbers часть 2";
+// предлоги
+"ChooseGroupOfCards.preposition" = "Prepositions";
+// местоимения
+"ChooseGroupOfCards.pronomen" = "Pronouns";
+// вопросы
+"ChooseGroupOfCards.question" = "Questions";
+// чувства
+"ChooseGroupOfCards.feeling" = "Feelings";
+// измерения
+"ChooseGroupOfCards.measure" = "Measurements";
+// покупки
+"ChooseGroupOfCards.purchase" = "Purchases";
+// искусство
+"ChooseGroupOfCards.art" = "Art";
+// вещи 1
+"ChooseGroupOfCards.thing1" = "Things часть 1";
+// вещи 2
+"ChooseGroupOfCards.thing2" = "Things часть 2";
+// вещи 3
+"ChooseGroupOfCards.thing3" = "Things часть 3";
+// здоровье
+"ChooseGroupOfCards.health" = "Health";
+// посуда
+"ChooseGroupOfCards.dishes" = "Dishes";
+// Бланк
+"ChooseGroupOfCards.blank" = "Blank";
+// время
+"ChooseGroupOfCards.time1" = "Time";
+// Дни недели
+"ChooseGroupOfCards.time2" = "Days of the week";
+// месяца
+"ChooseGroupOfCards.time3" = "Months";
+// транспорт
+"ChooseGroupOfCards.transport" = "Transport";
+// люди
+"ChooseGroupOfCards.people" = "People";
+// животные
+"ChooseGroupOfCards.animal" = "Animals";
+// Выбрать родной язык
+"ChooseGroupOfCards.chooseNativeLang" = "Select native language";
+// Выбрать иностранный язык
+"ChooseGroupOfCards.chooseForeignLang" = "Select a foreign language";
+// Добавить
+"ChooseGroupOfCards.Add" = "Add";
+// Выбрать тему
+"ChooseGroupOfCards.needChooseTheme" = "Select a topic";
+// иностранный язык
+"ChooseGroupOfCards.foreignLang" = "Foreign language";
+// родной язык
+"ChooseGroupOfCards.nativeLang" = "Native language";
+
+
+
+
+
+
+//  MARK: - TypeOfCardsTheme
+
+
+// семья
+"TypeOfCardsTheme.familyTheme" = "Family";
+// погода
+"TypeOfCardsTheme.wheatherTheme" = "Weather";
+// внешность
+"TypeOfCardsTheme.appearanceTheme" = "Appearance";
+// характер
+"TypeOfCardsTheme.characterTheme" = "Character";
+// настроение
+"TypeOfCardsTheme.moodTheme" = "Mood";
+// мой день
+"TypeOfCardsTheme.myDayTheme" = "My day";
+// школа
+"TypeOfCardsTheme.schoolTheme" = "School";
+// хобби
+"TypeOfCardsTheme.hobbyTheme" = "Hobby";
+// книги
+"TypeOfCardsTheme.booksTheme" = "Books";
+// еда
+"TypeOfCardsTheme.foodTheme" = "Food";
+// одежда
+"TypeOfCardsTheme.clotherTheme" = "clothes";
+// природа
+"TypeOfCardsTheme.natureTheme" = "Nature";
+// путешествие
+"TypeOfCardsTheme.travelTheme" = "Journey";
+// дом
+"TypeOfCardsTheme.homeTheme" = "Home";
+// вечеринка
+"TypeOfCardsTheme.partyTheme" = "Party";
+// работа
+"TypeOfCardsTheme.jobTheme" = "Work";
+// спорт
+"TypeOfCardsTheme.sportTheme" = "Sports";
+// город
+"TypeOfCardsTheme.cityTheme" = "City";
+// глаголы
+"TypeOfCardsTheme.verbTheme" = "Verbs";
+// Другое
+"TypeOfCardsTheme.otherTheme" = "Other";
+// прилагательные
+"TypeOfCardsTheme.adjectiveTheme" = "Adjectives";
+// цвет
+"TypeOfCardsTheme.colorTheme" = "Color";
+// события
+"TypeOfCardsTheme.eventTheme" = "Events";
+// цифры
+"TypeOfCardsTheme.numberTheme" = "Numbers";
+// предлоги
+"TypeOfCardsTheme.prepositionTheme" = "Prepositions";
+// местоимения
+"TypeOfCardsTheme.pronomenTheme" = "Pronouns";
+// вопросы
+"TypeOfCardsTheme.questionTheme" = "Questions";
+// чувства
+"TypeOfCardsTheme.feelingTheme" = "Feelings";
+// измерения
+"TypeOfCardsTheme.measureTheme" = "Measurements";
+// покупки
+"TypeOfCardsTheme.purchaseTheme" = "Purchases";
+// искусство
+"TypeOfCardsTheme.artTheme" = "Art";
+// вещи
+"TypeOfCardsTheme.thingTheme" = "Things";
+// здоровье
+"TypeOfCardsTheme.healthTheme" = "Health";
+// посуда
+"TypeOfCardsTheme.dishesTheme" = "Dishes";
+// мебель
+"TypeOfCardsTheme.furnitureTheme" = "Furniture";
+// время
+"TypeOfCardsTheme.timeTheme" = "Time";
+// транспорт
+"TypeOfCardsTheme.transportTheme" = "Transport";
+// люди
+"TypeOfCardsTheme.peopleTheme" = "People";
+// животные
+"TypeOfCardsTheme.animalTheme" = "Animals";
+}
+
+
+
+
+
+
+//  MARK: - AccountVC
+// Сбросить пароль?
+"AccountVC.resetPassword" = "Reset the password?";
+// Да, на почту
+"AccountVC.yesToMail" = "Yes, to the mail";
+// Зарегистрироватся
+"AccountVC.register" = "Register";
+// Войти
+"AccountVC.signIn" = "Login";
+// Придумайте пароль
+"AccountVC.createPassword" = "Set a password";
+// Введите пароль
+"AccountVC.enterPassword" = "Enter password";
+// Введите имя
+"AccountVC.enterName" = "Enter your name";
+// Выйти
+"AccountVC.logout" = "Logout";
+// Ваш логин:
+"AccountVC.youSignInWithLogin" = "Your login:";
+// Введите почту
+"AccountVC.enterMail" = "Enter mail";
+// Вошли в систему!
+"AccountVC.loginSuccess" = "Logged in!";
+// Успешно зарегистрировались!
+"AccountVC.registerSuccess" = "Successfully registered!";
+// Карточки сохраняются в облаке и будут загружаться с других ваших устройств на этом аккаунте
+"AccountVC.messageSuccess" = "Cards are saved in the cloud and will be downloaded from your other devices on this account";

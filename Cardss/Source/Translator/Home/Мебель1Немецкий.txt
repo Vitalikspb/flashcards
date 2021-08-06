@@ -1,0 +1,14 @@
+Tisch
+Der Stuhl
+Sessel
+Sofa
+Bett
+Kleiderschrank
+Schrank
+Regal
+Spiegel
+Teppich
+Kühlschrank
+Mikrowelle
+Ofen
+Küchenherd

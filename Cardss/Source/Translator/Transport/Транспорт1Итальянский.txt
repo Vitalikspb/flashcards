@@ -1,0 +1,15 @@
+aereo
+elicottero
+gommone
+yacht
+Metro
+auto
+tram
+autobus
+un treno
+nave
+bicicletta
+Motociclo
+ciclomotore
+limousine
+filobus

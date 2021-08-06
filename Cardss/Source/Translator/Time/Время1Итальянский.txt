@@ -1,0 +1,21 @@
+minuto
+ora
+una settimana
+giorno della settimana
+anno
+secolo
+l'altro ieri
+ieri
+Oggi
+stasera
+Domani
+dopodomani
+la mattina
+in serata
+all'alba
+Sul tramonto
+a mezzanotte
+a pranzo
+presto
+tardi
+è arrivato in tempo

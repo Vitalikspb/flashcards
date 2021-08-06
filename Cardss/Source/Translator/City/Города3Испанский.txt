@@ -1,0 +1,20 @@
+cine
+hospital
+policía
+oficina de correos
+estación
+el aeropuerto
+puntaje
+farmacia
+mercado
+oficina
+empresa
+fábrica
+área
+calle
+camino
+cruce
+detener
+acera
+sendero
+jardín

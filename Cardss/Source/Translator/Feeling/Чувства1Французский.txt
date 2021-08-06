@@ -1,0 +1,20 @@
+amusant
+joie
+peur
+tristesse
+la passion
+plaisir
+joie
+paix
+l'amour
+haine
+colère
+dépression
+positif
+négatif
+fatigue
+somnolent
+reposé
+fatigué
+bouleversé
+ambiance

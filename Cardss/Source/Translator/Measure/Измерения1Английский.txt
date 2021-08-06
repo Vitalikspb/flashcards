@@ -1,0 +1,20 @@
+distance
+length
+height
+depth
+force
+speed
+kilometer
+kilogram
+lb.
+sound
+width
+inch
+gallon
+liter
+meter
+weight
+time
+loud
+quiet
+volume level

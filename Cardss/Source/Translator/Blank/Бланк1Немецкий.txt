@@ -1,0 +1,22 @@
+Name
+Nachname
+Vatersname
+Mädchenname
+Geburtsdatum
+Geburtsort
+Adresse
+Familienstand
+Ledig / unverheiratet
+einfache Fahrt (über Ticket)
+verheiratet
+verdünnt
+verwitwet
+ein Kind
+zwei Kinder
+deaktiviert
+Mann
+weiblich
+Strafen
+fein
+MwSt
+Prozent

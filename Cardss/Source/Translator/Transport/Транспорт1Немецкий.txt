@@ -1,0 +1,15 @@
+Flugzeug
+Hubschrauber
+Schlauchboot
+Yacht
+Metro
+Wagen
+Straßenbahn
+Bus
+ein Zug
+Schiff
+Fahrrad
+Motorrad
+Moped
+Limousine
+Obus

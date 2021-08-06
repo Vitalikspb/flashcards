@@ -1,0 +1,31 @@
+ein Sandwich
+getoastetes Brot
+Kuchen, Gebäck
+Brötchen
+Tee
+Kaffee
+Zucker
+Haferbrei
+Käse
+Wurst
+Würste
+Salz-
+Pfeffer
+Salat
+Fleisch
+Hähnchen
+Fisch
+Schnitzel
+Kartoffel
+Tomate
+Gemüse
+Suppe
+Brot
+Butter
+trinken
+Milch
+Saft
+Coca-Cola
+Mineralwasser
+Eis
+Obst

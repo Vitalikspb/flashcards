@@ -1,0 +1,21 @@
+la taille
+le prix
+de l'argent
+en espèces
+remise
+compte bancaire
+But
+Astuce
+reddition
+paiement par carte bancaire
+montant total
+bagatelle
+devise
+échangeur
+Taux d'échange
+commission
+solde du compte
+fonds insuffisants
+Erreur de paiement
+paiement effectué
+payé avec succès

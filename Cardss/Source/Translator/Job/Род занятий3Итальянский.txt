@@ -1,0 +1,21 @@
+studente universitario
+casalinga
+poliziotto
+pompiere
+Guardia di sicurezza
+guardia del corpo
+soccorritore
+banchiere
+ingegnere
+programmatore
+scienziato
+traduttore
+interprete
+modello
+postino
+bibliotecario
+atleta
+calciatore professionista
+cucinare
+avvocato
+Lavoro

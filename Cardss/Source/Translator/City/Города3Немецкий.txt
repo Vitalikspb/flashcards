@@ -1,0 +1,20 @@
+Kino
+Krankenhaus
+Polizei
+Post
+Bahnhof
+Der Flughafen
+Ergebnis
+Apotheke
+Markt
+Büro
+Unternehmen
+Fabrik
+Bereich
+Straße
+Straße
+Kreuzung
+Stopp
+Bürgersteig
+Weg
+Garten

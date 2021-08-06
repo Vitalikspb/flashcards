@@ -1,0 +1,14 @@
+sağlıklı
+hasta
+hastalık
+sıcaklık
+öksürük
+burun akması
+hapşırmak
+Ağrı
+baş ağrısı
+grip
+çürük
+eli kırmak
+diş ağrısı
+kontak lens

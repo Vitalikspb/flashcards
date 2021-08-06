@@ -1,0 +1,23 @@
+Koffer
+vorhanden
+Kamera
+Vase
+Taschentuch
+Ball
+Luftballon
+Spielzeug
+Fahrkarte
+Gepäck
+Batterie
+Eimer
+Seil
+Tafel
+der Kalender
+Notizbuch
+Pinsel
+Tastatur
+Schlüssel
+Rad
+Lenkrad
+Kofferraum
+Benzin

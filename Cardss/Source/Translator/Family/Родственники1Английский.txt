@@ -1,0 +1,29 @@
+father
+mother
+parents
+son
+daughter
+sister
+brother
+cousin
+sibling
+second cousin
+twins
+aunt
+uncle
+nephew
+niece
+grandfather
+grandmother
+grandparents
+great grandmother
+great grandfather
+grandson
+granddaughter
+husband
+wife
+child
+children
+grandchildren
+baby
+relative

@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AttributedString",
+        "repositoryURL": "https://github.com/lixiang1994/AttributedString",
+        "state": {
+          "branch": null,
+          "revision": "a23728c8428856ae304c100c3a34f099b238689e",
+          "version": "1.6.9"
+        }
+      },
+      {
+        "package": "Realm",
+        "repositoryURL": "https://github.com/realm/realm-cocoa.git",
+        "state": {
+          "branch": null,
+          "revision": "83a07f6a508c3427058d9e2c466208d0b6a960fa",
+          "version": "10.12.0"
+        }
+      },
+      {
+        "package": "RealmDatabase",
+        "repositoryURL": "https://github.com/realm/realm-core",
+        "state": {
+          "branch": null,
+          "revision": "e72b3078bfc5c3f69a0b18f7a220be27e28c463f",
+          "version": "11.2.0"
+        }
+      },
+      {
+        "package": "SwiftyStoreKit",
+        "repositoryURL": "https://github.com/bizz84/SwiftyStoreKit.git",
+        "state": {
+          "branch": null,
+          "revision": "3b54c8eac2840b0cdd576634e83d9ebeb70f847c",
+          "version": "0.16.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,24 @@
+Wetter
+schön
+schrecklich
+kalt
+heiß
+warm
+Himmel
+Die Sonne
+Regen
+Wind
+Wolke
+Schnee
+Solar-
+regnerisch
+windig
+wolkig
+hell
+schneebedeckt
+Es regnet
+es schneit
+Schlag
+scheinen
+wärmer werden
+Veränderung

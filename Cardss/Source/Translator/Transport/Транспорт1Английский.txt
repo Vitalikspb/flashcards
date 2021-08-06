@@ -1,0 +1,15 @@
+plane
+helicopter
+inflatable boat
+yacht
+Metro
+car
+tram
+bus
+a train
+ship
+bicycle
+Motorcycle
+moped
+limousine
+trolleybus

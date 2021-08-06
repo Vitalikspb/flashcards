@@ -1,0 +1,24 @@
+weather
+fine
+terrible
+cold
+hot
+warm
+the sky
+the sun
+rain
+wind
+cloud
+snow
+sunny
+rainy
+windy
+cloudy
+bright
+snowy
+to rain
+to snow
+to blow
+to shine
+to get warmer
+to change

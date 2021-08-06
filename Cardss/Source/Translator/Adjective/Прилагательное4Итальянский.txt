@@ -1,0 +1,20 @@
+veloce
+veloce
+lento
+morbido
+solido
+triste
+lieto
+contento
+genere
+arrabbiato
+il male
+gentile
+maleducato
+tenero
+coraggioso
+vigliaccamente
+timido
+laborioso
+pigro
+utile

@@ -1,0 +1,14 @@
+tavolo
+sedia
+poltrona
+divano
+letto
+(armadio
+credenza
+mensola
+specchio
+tappeto
+frigorifero
+forno a microonde
+forno
+fornello da cucina

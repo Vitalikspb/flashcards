@@ -1,0 +1,19 @@
+sentimiento
+estado animico
+contento
+triste
+disgustado
+contento
+infeliz
+enfadado
+vigoroso
+emocionado
+aburrido
+cansado (condición)
+asustado (estado)
+preocupado (preocupado)
+perplejo
+interesado
+ser
+sentir
+parecerse a

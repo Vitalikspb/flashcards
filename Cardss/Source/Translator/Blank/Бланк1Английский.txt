@@ -1,0 +1,22 @@
+name
+surname
+patronymic
+maiden name
+Date of Birth
+Place of Birth
+address
+marital status
+single / unmarried
+one way (about ticket)
+married
+diluted
+widowed
+one child
+two children
+disabled
+Man
+female
+penalties
+fine
+tax
+percent

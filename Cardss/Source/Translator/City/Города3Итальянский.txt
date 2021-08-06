@@ -1,0 +1,20 @@
+cinema
+Ospedale
+Polizia Stradale
+ufficio postale
+stazione
+l'aeroporto
+Punto
+farmacia
+mercato
+ufficio
+azienda
+fabbrica
+la zona
+strada
+strada
+incrocio stradale
+fermare
+marciapiede
+sentiero
+giardino

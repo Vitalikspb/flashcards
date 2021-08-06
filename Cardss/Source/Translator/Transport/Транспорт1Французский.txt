@@ -1,0 +1,15 @@
+avion
+hélicoptère
+bateau gonflable
+yacht
+Métro
+voiture
+tram
+autobus
+un train
+bateau
+bicyclette
+Moto
+vélomoteur
+limousine
+trolleybus

@@ -1,0 +1,29 @@
+padre
+mamá
+padres
+hijo
+hija
+hermana
+hermano
+prima (o hermana)
+hermano hermana)
+prima segunda (hermana)
+mellizos
+tía
+tío
+sobrino
+sobrina
+Abuelo
+abuela
+Abuelo y Abuela
+bisabuela
+bisabuelo
+nieto
+nieta
+esposo
+esposa
+niño
+niños
+nietos
+niño
+relativo

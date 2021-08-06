@@ -1,0 +1,19 @@
+sentiment
+ambiance
+heureux
+triste
+bouleversé
+heureux
+malheureux
+en colère
+vigoureux
+excité
+ennuyait
+fatigué (état)
+peur (état)
+inquiet (inquiet)
+perplexe
+intéressé
+être
+Ressentir
+ressembler à

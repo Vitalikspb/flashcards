@@ -1,0 +1,20 @@
+inutili
+forte
+debole
+forte
+rumoroso
+silenzioso
+calma
+stretto
+largo
+pulito
+sporco
+stanco
+giusto
+confortevole
+strano
+strano
+proprio
+gustoso
+molto saporito
+amaro

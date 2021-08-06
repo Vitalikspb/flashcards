@@ -1,0 +1,20 @@
+bella
+brutto
+alto
+corto
+lungo
+pesante
+facile
+difficile
+facile
+pianura
+buio
+costoso (per il prezzo)
+simpatico
+a buon mercato
+povero
+ricco
+dritto
+sinistra
+giusto
+sbagliato

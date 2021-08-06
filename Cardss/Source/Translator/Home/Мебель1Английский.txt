@@ -1,0 +1,14 @@
+table
+chair
+armchair
+sofa
+bed
+wardrobe
+cabinet
+shelf
+mirror
+carpet
+fridge
+microwave
+oven
+stove

@@ -1,0 +1,20 @@
+old
+young
+new
+large
+large
+huge
+small
+fat
+thin
+hungry
+well-fed
+full
+good
+a great
+astonishing
+beautiful
+bad
+horrible
+nasty
+early

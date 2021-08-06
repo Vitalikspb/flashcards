@@ -1,0 +1,580 @@
+
+
+// MARK: - Shared
+// Заново (очистить экран и начать заново заполнять форму)
+"Shared.anew" = "Tekrar dene";
+// Готово
+"Shared.done" = "Tamamlandı";
+// Закрыть
+"Shared.close" = "Kapat";
+// ок
+"Shared.ok" = "Tamam";
+// ошибка
+"Shared.error" = "Hata";
+// Сохранить
+"Shared.save" = "Kaydet";
+// Удалить
+"Shared.delete" = "Sil";
+// Terms of Use
+"Shared.termsOfUse" = "Terms Of Use";
+// Privacy Policy
+"Shared.privacyPolicy" = "Privacy Policy";
+// Предупреждение (предупрежление об ошибке)
+"Shared.warning" = "Dikkat";
+// Ошибка оплаты
+"Shared.errorWithPurchase" = "Ödeme hatası";
+// попробуйте немного позже
+"Shared.tryAgainLater" = "Birazdan deneyin";
+// Продолжить
+"Shared.continueBuyButton" = "Devam";
+// Восстановить (покупки)
+"Shared.restore" = "Geri Yükleme";
+// Без рекламы
+"Shared.noAds" = "Reklamsız";
+// Использование библиотеки (библиотека карточек со словами)
+"Shared.useLibrary" = "Hazine kullanımı";
+// Все функции (Доступны все функции)
+"Shared.workWithAllFunction" = "Tüm işlevler";
+// Название темы
+"Shared.defaultTheme" = "Konu başlığı";
+// Название коллекции (коллекция карточек)
+"Shared.noThemeName" = "Deste başlığı";
+// Количество изучаемых слов должно быть равно 5 или больше
+"Shared.errorCountOfNewWords" = "Destedeki kelimelerin sayısı 5’ten fazla olmalı";
+// Время обучения (время обучения того или иного материала)
+"Shared.educationTime" = "Eğitim süresi";
+// час
+"Shared.hour" = "saat";
+// минут
+"Shared.minute" = "dakika";
+// Количество повторений
+"Shared.repeatsCount" = "Tekrar sayısı";
+// Все слова
+"Shared.allWords" = "Tüm kelimeler";
+// Выученные слова
+"Shared.learnedWords" = "Ezberlenmiş kelimeler";
+// минуты -> м. ( сокращение от слова минуты желательно использовать одну букву)
+"Shared.minuteShort" = "dk";
+// час -> ч ( сокращение от слова час желательно использовать одну букву)
+"Shared.hourShort" = "s";
+// за все время
+"Shared.allTimeEducation" = "eğitimin tüm süresinde";
+// за 7 дней
+"Shared.sevenDayEducation" = "7 günde";
+// Получить премиум
+"Shared.getPremium" = "Tam erişimi al";
+
+
+
+// MARK: - Languages
+// Русский
+"Languages.russian" = "Rusça";
+// Английский
+"Languages.english" = "İngilizce";
+// Немецкий
+"Languages.german" = "Almanca";
+// Итальянский
+"Languages.italy" = "İtalyanca";
+// Испанский
+"Languages.spanish" = "İspanyolca";
+// Китайский
+"Languages.chine" = "Çince";
+// Арабский
+"Languages.arabic" = "Arapça";
+// Португальский
+"Languages.portugal" = "Portekizce";
+// Индонезийский
+"Languages.indonezian" = "Endonezyaca";
+// Французский
+"Languages.french" = "Fransızca";
+// Японский
+"Languages.japan" = "Japonca";
+// Шведский
+"Languages.swedish" = "İsveççe";
+// Турецкий
+"Languages.turkish" = "Türkçe";
+// Корейский
+"Languages.korean" = "Korece";
+// Вьетнамский
+"Languages.vietman" = "Vietnamca";
+// Тайский
+"Languages.thai" = "Tayca";
+
+
+
+// MARK: - AddNewWordsVC
+// Введите тему
+"AddNewWordsVC.enterTheme" = "Başlığı yazın";
+// библиотека
+"AddNewWordsVC.library" = "hazine";
+// Иностранный язык
+"AddNewWordsVC.foreignLanguage" = "Yabancı dil";
+// Родной язык
+"AddNewWordsVC.nativeLanguage" = "Anadil";
+// Разное количество строк
+"AddNewWordsVC.countOfLinesError" = "Satırların farklı sayısı";
+// Новые
+"AddNewWordsVC.new" = "Yeni";
+// Название
+"AddNewWordsVC.name" = "Başlık";
+// Добавить
+"AddNewWordsVC.add" = "Ekle";
+// Изменить
+"AddNewWordsVC.change" = "Düzenle";
+// Введите название
+"AddNewWordsVC.setName" = "Başlığı değiştir";
+// Введите слова в верхнее поле
+"AddNewWordsVC.setNativeWords" = "Kelimeleri yukarıdaki alana yazın";
+// Введите слова в нижнее поле
+"AddNewWordsVC.setForeignWords" = "Kelimeleri aşağıdaki alana yazın";
+// Часть 1 (другими словами часть какого то раздела - первая часть, вторая часть и тд)
+"AddNewWordsVC.beginer" = "2 Bölüm";
+// Часть 2
+"AddNewWordsVC.middle" = "3 Bölüm";
+// Часть 3
+"AddNewWordsVC.middlePlus" = "4 Bölüm";
+// Часть 4
+"AddNewWordsVC.advanced" = "5 Bölüm";
+// Часть 5
+"AddNewWordsVC.advancedPlus" = "6 Bölüm";
+
+
+
+
+
+// MARK: - CardsVC
+// Редактирование
+"CardsVC.addNewCards" = "Düzenle";
+// Добавить коллекцию
+"CardsVC.edit" = "Deste ekle";
+// Название
+"CardsVC.name" = "Başlık";
+// Дата
+"CardsVC.date" = "Tarih";
+
+
+
+
+
+
+// MARK: - StatisticsVC
+// Статистика
+"StatisticsVC.statistic" = "İstatistik";
+// Выученные слова
+"StatisticsVC.learnedWords" = "Ezberlenmiş kelimeler";
+// Время обучения
+"StatisticsVC.educationTime" = "Eğitim süresi";
+// Повторения
+"StatisticsVC.repeats" = "Tekrarlama";
+// слов
+"StatisticsVC.word" = "kelime";
+
+
+
+
+
+
+// MARK: - SettingVC
+// Показывать подсказки
+"SettingVC.showHints" = "İpucu göster";
+// Цвет темы
+"SettingVC.themeColor" = "Tema rengi";
+// голос (диктор)
+"SettingVC.voice" = "Ses";
+// Оценить ( оценить приложение в магазине)
+"SettingVC.estimate" = "Değerlendir";
+// Поделиться ( поделиться приложение с другом)
+"SettingVC.share" = "Paylaş";
+// Поддержка ( написать в поддержку)
+"SettingVC.support" = "Destek";
+// Автоматическая тема ( тема подразумевается приложение будет светлое или темное)
+"SettingVC.unspecified" = "Otomatik tema";
+// Темная (тема приложениея)
+"SettingVC.dark" = "Koyu";
+// Светлая (тема приложениея)
+"SettingVC.light" = "Açık";
+// Настройки
+"SettingVC.settings" = "Ayarlar";
+// Аккаунт
+"SettingVC.account" = "Hesap";
+
+// Случайный порядок карточек
+"SettingVC.randomList" = "Rastgele sıra";
+// Тест или карточки (Учить слова тестом или карточкой)
+"SettingVC.testOrCards" = "Test veya kart";
+// Обучение
+"SettingVC.leanrOfCards" = "Öğren";
+// Какую сторону учим
+"SettingVC.whichCardDoYouLearn" = "Hangi tarafı öğreniyoruz?";
+// Верхнюю ( учим верхнюю карточку)
+"SettingVC.left" = "Üst";
+// Нижнюю ( учим нижнюю карточку)
+"SettingVC.right" = "Alt";
+// Случайную ( учим случайную карточку)
+"SettingVC.random" = "Rastgele";
+// Ночной режим
+"SettingVC.nightMode" = "Koyu tema";
+// Уведомления
+"SettingVC.notifications" = "Bildirimler";
+
+
+
+
+
+
+// MARK: - NotificationVC
+// Укажите день недели
+"NotificationVC.errorDay"  = "Haftanın gününü belirtin";
+// Введите название
+"NotificationVC.errorName" = "Başlığı yazın";
+// Уведомления ( имеется в виду появляющиеся уведомления в приложении)
+"NotificationVC.notification" = "Bildirimler";
+// Название уведомления
+"NotificationVC.name" = "Bildirimler adı";
+// Введите название уведомления
+"NotificationVC.nameError" = "Bildirim adını yazın";
+// Понедельник
+"NotificationVC.monday"    = "Pazartesi";
+// Вторник
+"NotificationVC.tuesday"   = "Salı";
+// Среда
+"NotificationVC.wednesday" = "Çarşamba";
+// Четверг
+"NotificationVC.thursday"  = "Perşembe";
+// Пятница
+"NotificationVC.friday"    = "Cuma";
+// Суббота
+"NotificationVC.saturday"  = "Cumartesi";
+// Воскресенье
+"NotificationVC.sunday"    = "Pazar";
+// пн (сокращение от дня недели)
+"NotificationVC.mondayShort"         = "pzt";
+// вт (сокращение от дня недели)
+"NotificationVC.tuesdayShort"        = "sal";
+// ср (сокращение от дня недели)
+"NotificationVC.wednesdayShort"      = "çar";
+// чт (сокращение от дня недели)
+"NotificationVC.thursdayShort"       = "per";
+// пт (сокращение от дня недели)
+"NotificationVC.fridayShort"         = "cum";
+// сб (сокращение от дня недели)
+"NotificationVC.saturdayShort"       = "cmt";
+// Вс (сокращение от дня недели)
+"NotificationVC.sundayShort"         = "paz";
+// Пора учить карточки
+"NotificationVC.notificationString1" = "Kartları ezberleyelim!";
+// Давно тебя не видели
+"NotificationVC.notificationString2" = "Epeydir görüşmedik!";
+// Учить карточки
+"NotificationVC.notificationString3" = "Kelimeleri ezberlemek lazım!";
+// Сейчас начнется обучение
+"NotificationVC.notificationString4" = "Eğitim şimdi başlıyor!";
+// Есть пару минут для обучения
+"NotificationVC.notificationString5" = "Eğitim için biraz zamanın var mı?";
+// Давай учиться
+"NotificationVC.notificationString6" = "Hadi okuyalım!";
+// Новые слова ждут тебя
+"NotificationVC.notificationString7" = "Yeni kelimeler seni bekler!";
+
+
+
+
+
+
+
+// MARK: - EducationVC
+// обучение
+"EducationVC.education" = "eğitim";
+// начать
+"EducationVC.start" = "başla";
+
+
+
+
+
+// MARK: - AddPackOfCardToLearnVC
+// Выбрать карточки
+"AddPackOfCardToLearnVC.chooseForLearning" = "Kartları seç";
+
+
+
+
+
+// MARK: - ChooseGroupOfCards
+// - MARK: ChooseGroupOfCards
+
+
+// Родственники
+"ChooseGroupOfCards.family" = "Akrabalar";
+// погода
+"ChooseGroupOfCards.wheather" = "hava olayları";
+
+// внешность 1
+"ChooseGroupOfCards.appearance1" = "Görünüş. 1. Bölüm";
+// внешность 2
+"ChooseGroupOfCards.appearance2" = "Görünüş. 2. Bölüm";
+// характер
+"ChooseGroupOfCards.character" = "karakter";
+// настроение
+"ChooseGroupOfCards.mood" = "keyif";
+// мой день
+"ChooseGroupOfCards.myDay" = "günüm";
+// школа
+"ChooseGroupOfCards.school" = "okul";
+// хобби
+"ChooseGroupOfCards.hobby" = "hobbi";
+// книги 1
+"ChooseGroupOfCards.books1" = "Kitaplar 1. Bölüm";
+// книги 2
+"ChooseGroupOfCards.books2" = "Kitaplar 2. Bölüm";
+// книги 3
+"ChooseGroupOfCards.books3" = "Kitaplar 3. Bölüm";
+// еда 1
+"ChooseGroupOfCards.food1" = "Yemek 1. Bölüm";
+// еда 2
+"ChooseGroupOfCards.food2" = "Yemek 2. Bölüm";
+// еда 3
+"ChooseGroupOfCards.food3" = "Yemek 3. Bölüm";
+// еда 4
+"ChooseGroupOfCards.food4" = "Yemek 4. Bölüm";
+// еда 5
+"ChooseGroupOfCards.food5" = "Yemek 5. Bölüm";
+// одежда 1
+"ChooseGroupOfCards.clother1" = "Elbise 1. Bölüm";
+// одежда 2
+"ChooseGroupOfCards.clother2" = "Elbise 2. Bölüm";
+// природа 1
+"ChooseGroupOfCards.nature1" = "Doğa 1. Bölüm";
+// природа 2
+"ChooseGroupOfCards.nature2" = "Doğa 2. Bölüm";
+// путешествие
+"ChooseGroupOfCards.travel" = "seyahat";
+// вечеринки
+"ChooseGroupOfCards.party" = "parti";
+// Род занятий
+"ChooseGroupOfCards.job1" = "Meslek 1. Bölüm";
+// Род занятий
+"ChooseGroupOfCards.job2" = "Meslek 2. Bölüm";
+// Род занятий
+"ChooseGroupOfCards.job3" = "Meslek 3. Bölüm";
+// Спорт
+"ChooseGroupOfCards.sport" = "Spor";
+// Дом 1
+"ChooseGroupOfCards.home1" = "Ev";
+// Мебель 1
+"ChooseGroupOfCards.home2" = "Mobilya";
+// города 1
+"ChooseGroupOfCards.city1" = "Şehirler 1. Bölüm";
+// города 2
+"ChooseGroupOfCards.city2" = "Şehirler 2. Bölüm";
+// города 3
+"ChooseGroupOfCards.city3" = "Şehirler 3. Bölüm";
+
+// глаголы 1
+"ChooseGroupOfCards.verb1" = "Fiiller 1. Bölüm";
+// глаголы 2
+"ChooseGroupOfCards.verb2" = "Fiiller 2. Bölüm";
+// глаголы 3
+"ChooseGroupOfCards.verb3" = "Fiiller 3. Bölüm";
+// глаголы 4
+"ChooseGroupOfCards.verb4" = "Fiiller 4. Bölüm";
+
+// другие 1
+"ChooseGroupOfCards.other1" = "digerler 1. Bölüm";
+// другие 2
+"ChooseGroupOfCards.other2" = "digerler 2. Bölüm";
+// другие 3
+"ChooseGroupOfCards.other3" = "digerler 3. Bölüm";
+// другие 4
+"ChooseGroupOfCards.other4" = "digerler 4. Bölüm";
+// другие 5
+"ChooseGroupOfCards.other5" = "digerler 5. Bölüm";
+// прилагательные 1
+"ChooseGroupOfCards.adjective1" = "sıfatlar 1. Bölüm";
+// прилагательные 2
+"ChooseGroupOfCards.adjective2" = "sıfatlar 2. Bölüm";
+// прилагательные 3
+"ChooseGroupOfCards.adjective3" = "sıfatlar 3. Bölüm";
+// прилагательные 4
+"ChooseGroupOfCards.adjective4" = "sıfatlar 4. Bölüm";
+// прилагательные 5
+"ChooseGroupOfCards.adjective5" = "sıfatlar 5. Bölüm";
+// Цвет
+"ChooseGroupOfCards.color" = "Renk";
+// События
+"ChooseGroupOfCards.event" = "Olaylar";
+// Цифры 1
+"ChooseGroupOfCards.number1" = "Rakamlar 1. Bölüm";
+// Цифры 2
+"ChooseGroupOfCards.number2" = "Rakamlar 2. Bölüm";
+// предлоги
+"ChooseGroupOfCards.preposition" = "öntakı";
+// местоимения
+"ChooseGroupOfCards.pronomen" = "zamir";
+// вопросы
+"ChooseGroupOfCards.question" = "sorular";
+// чувства
+"ChooseGroupOfCards.feeling" = "duygular";
+// измерения
+"ChooseGroupOfCards.measure" = "ölçümler";
+// покупки
+"ChooseGroupOfCards.purchase" = "alışveriş";
+// искусство
+"ChooseGroupOfCards.art" = "sanat";
+// вещи 1
+"ChooseGroupOfCards.thing1" = "eşyalar 1. Bölüm";
+// вещи 2
+"ChooseGroupOfCards.thing2" = "eşyalar 2. Bölüm";
+// вещи 3
+"ChooseGroupOfCards.thing3" = "eşyalar 3. Bölüm";
+// здоровье
+"ChooseGroupOfCards.health" = "sağlık";
+// посуда
+"ChooseGroupOfCards.dishes" = "kaplar";
+// Бланк
+"ChooseGroupOfCards.blank" = "Form";
+// время
+"ChooseGroupOfCards.time1" = "zaman";
+// Дни недели
+"ChooseGroupOfCards.time2" = "Hafta günleri";
+// месяца
+"ChooseGroupOfCards.time3" = "aylar";
+// транспорт
+"ChooseGroupOfCards.transport" = "ulaşım";
+// люди
+"ChooseGroupOfCards.people" = "insanlar";
+// животные
+"ChooseGroupOfCards.animal" = "hayvanlar";
+// Выбрать родной язык
+"ChooseGroupOfCards.chooseNativeLang" = "Anadilinizi seçin";
+// Выбрать иностранный язык
+"ChooseGroupOfCards.chooseForeignLang" = "Bir yabancı dil seçin";
+// Добавить
+"ChooseGroupOfCards.Add" = "Ekle";
+// Выбрать тему
+"ChooseGroupOfCards.needChooseTheme" = "Bir konu seçmem gerekiyor";
+// иностранный язык
+"ChooseGroupOfCards.foreignLang" = "Yabancı dil";
+// родной язык
+"ChooseGroupOfCards.nativeLang" = "Anadil";
+
+
+
+
+
+
+//  MARK: - TypeOfCardsTheme
+
+
+// семья
+"TypeOfCardsTheme.familyTheme" = "aile";
+// погода
+"TypeOfCardsTheme.wheatherTheme" = "hava";
+// внешность
+"TypeOfCardsTheme.appearanceTheme" = "görünüş";
+// характер
+"TypeOfCardsTheme.characterTheme" = "karakter";
+// настроение
+"TypeOfCardsTheme.moodTheme" = "ruh hali";
+// мой день
+"TypeOfCardsTheme.myDayTheme" = "günüm";
+// школа
+"TypeOfCardsTheme.schoolTheme" = "okul";
+// хобби
+"TypeOfCardsTheme.hobbyTheme" = "hobbi";
+// книги
+"TypeOfCardsTheme.booksTheme" = "kitaplar";
+// еда
+"TypeOfCardsTheme.foodTheme" = "yemek";
+// одежда
+"TypeOfCardsTheme.clotherTheme" = "elbise";
+// природа
+"TypeOfCardsTheme.natureTheme" = "doğa";
+// путешествие
+"TypeOfCardsTheme.travelTheme" = "seyahat";
+// дом
+"TypeOfCardsTheme.homeTheme" = "ev";
+// вечеринка
+"TypeOfCardsTheme.partyTheme" = "parti";
+// работа
+"TypeOfCardsTheme.jobTheme" = "iş";
+// спорт
+"TypeOfCardsTheme.sportTheme" = "spor";
+// город
+"TypeOfCardsTheme.cityTheme" = "şehir";
+// глаголы
+"TypeOfCardsTheme.verbTheme" = "fiiller";
+// Другое
+"TypeOfCardsTheme.otherTheme" = "Diğer";
+// прилагательные
+"TypeOfCardsTheme.adjectiveTheme" = "sıfatlar";
+// цвет
+"TypeOfCardsTheme.colorTheme" = "renk";
+// события
+"TypeOfCardsTheme.eventTheme" = "olaylar";
+// цифры
+"TypeOfCardsTheme.numberTheme" = "rakamlar";
+// предлоги
+"TypeOfCardsTheme.prepositionTheme" = "öntakılar";
+// местоимения
+"TypeOfCardsTheme.pronomenTheme" = "zamirler";
+// вопросы
+"TypeOfCardsTheme.questionTheme" = "sorular";
+// чувства
+"TypeOfCardsTheme.feelingTheme" = "duygular";
+// измерения
+"TypeOfCardsTheme.measureTheme" = "ölçümler";
+// покупки
+"TypeOfCardsTheme.purchaseTheme" = "alışveriş";
+// искусство
+"TypeOfCardsTheme.artTheme" = "sanat";
+// вещи
+"TypeOfCardsTheme.thingTheme" = "eşyalar";
+// здоровье
+"TypeOfCardsTheme.healthTheme" = "sağlık";
+// посуда
+"TypeOfCardsTheme.dishesTheme" = "kap";
+// мебель
+"TypeOfCardsTheme.furnitureTheme" = "mobilya";
+// время
+"TypeOfCardsTheme.timeTheme" = "zaman";
+// транспорт
+"TypeOfCardsTheme.transportTheme" = "ulaşım";
+// люди
+"TypeOfCardsTheme.peopleTheme" = "insanlar";
+// животные
+"TypeOfCardsTheme.animalTheme" = "havanlar";
+}
+
+
+
+
+
+
+//  MARK: - AccountVC
+// Сбросить пароль?
+"AccountVC.resetPassword" = "Şifre sıfırla mı?";
+// Да, на почту
+"AccountVC.yesToMail" = "Evet, e postaya";
+// Зарегистрироватся
+"AccountVC.register" = "Kaydol";
+// Войти
+"AccountVC.signIn" = "Oturum aç";
+// Придумайте пароль
+"AccountVC.createPassword" = "Şifreyi icat edin";
+// Введите пароль
+"AccountVC.enterPassword" = "Şifreyi girin";
+// Введите имя
+"AccountVC.enterName" = "Adı girin";
+// Выйти
+"AccountVC.logout" = "Çıkış";
+// Ваш логин:
+"AccountVC.youSignInWithLogin" = "Kullanıcı adınız:";
+// Введите почту
+"AccountVC.enterMail" = "E postanızı girin";
+// Вошли в систему!
+"AccountVC.loginSuccess" = "Girdiniz!";
+// Успешно зарегистрировались!
+"AccountVC.registerSuccess" = "Başarılı kaydoldunuz!";
+// Карточки сохраняются в облаке и будут загружаться с других ваших устройств на этом аккаунте
+"AccountVC.messageSuccess" = "Buluta yüklendiği kartlara bu hesabı kullanarak diğer cihazlarınızdan erişebilirsiniz";

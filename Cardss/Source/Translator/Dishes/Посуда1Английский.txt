@@ -1,0 +1,13 @@
+cup
+glass
+mug
+plate
+spoon
+fork
+knife
+saucer
+bottle
+napkin
+pan
+frying pan
+kettle

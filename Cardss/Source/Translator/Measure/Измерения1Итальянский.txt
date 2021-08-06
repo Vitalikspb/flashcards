@@ -1,0 +1,20 @@
+distanza
+lunghezza
+altezza
+profondità
+vigore
+velocità
+chilometro
+chilogrammo
+libbre.
+suono
+larghezza
+pollice
+gallone
+litro
+metro
+peso
+tempo
+forte
+silenzioso
+livello del volume

@@ -1,0 +1,21 @@
+Minute
+Stunde
+die Woche
+Wochentag
+Jahr
+Jahrhundert
+vorgestern
+gestern
+Heute
+heute Abend
+Morgen
+übermorgen
+morgens
+Am Abend
+in der Dämmerung
+Auf dem Sonnenuntergang
+um Mitternacht
+am Mittag
+früh
+spät
+kam pünktlich

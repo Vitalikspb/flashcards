@@ -1,0 +1,22 @@
+nombre
+apellido
+patronímico
+nombre de soltera
+Fecha de nacimiento
+Lugar de nacimiento
+habla a
+estado civil
+soltero / soltero
+ida (sobre el boleto)
+casado
+diluido
+viudo
+Un niño
+dos niños
+discapacitado
+Hombre
+mujer
+sanciones
+multa
+impuesto
+por ciento

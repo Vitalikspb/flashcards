@@ -1,0 +1,22 @@
+isim
+soyadı
+soyadı
+kızlık soyadı
+Doğum tarihi
+Doğum yeri
+adres
+Medeni hal
+bekar / evlenmemiş
+tek yön (bilet hakkında)
+evli
+seyreltilmiş
+dul
+bir çocuk
+İki çocuk
+engelli
+Adam
+kadın
+cezalar
+ince
+vergi
+yüzde

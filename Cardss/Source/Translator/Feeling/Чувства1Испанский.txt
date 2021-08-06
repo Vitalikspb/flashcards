@@ -1,0 +1,20 @@
+divertida
+alegría
+temor
+tristeza
+pasión
+Placer
+felicidad
+paz
+amor
+odio
+ira
+depresión
+positivo
+negativo
+fatiga
+somnoliento
+descansado
+cansado
+disgustado
+estado animico

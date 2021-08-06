@@ -1,0 +1,31 @@
+curly
+thick
+thin
+eyes
+big
+little
+green
+blue
+brown (hazel)
+face
+round
+oval
+nose
+long
+straight
+turned up
+mouth
+lips
+teeth
+ears
+forehead
+neck
+body
+arms
+hands
+legs
+knees
+feet
+point at
+wave at
+whistle

@@ -1,0 +1,14 @@
+mesa
+silla
+Sillón
+sofá
+cama
+(guardarropa
+alacena
+estante
+espejo
+alfombra
+refrigerador
+horno microondas
+horno
+Estufa de cocina

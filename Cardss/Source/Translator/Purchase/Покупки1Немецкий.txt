@@ -1,0 +1,21 @@
+die Größe
+Preis
+Geld
+Kasse
+Rabatt
+Bankkonto
+Ergebnis
+Trinkgeld
+Kapitulation
+Zahlung per Kreditkarte
+Gesamtmenge
+Kleinigkeit
+Währung
+Wärmetauscher
+Wechselkurse
+Kommission
+Kontostand
+unzureichende Mittel
+Zahlungsfehler
+Zahlung erfolgt
+erfolgreich bezahlt

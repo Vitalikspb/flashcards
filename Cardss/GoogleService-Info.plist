@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>273775127264-f4u60g37elh9325kok64qeoc5g97cgeq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.273775127264-f4u60g37elh9325kok64qeoc5g97cgeq</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC1-2BfmGHint7aHmV8q627efHQ0RA5NuY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>273775127264</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ru.vitaliySviridov.Cards</string>
+	<key>PROJECT_ID</key>
+	<string>cards-9cc86</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cards-9cc86.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:273775127264:ios:0b2a9ee27d442730a03e85</string>
+</dict>
+</plist>

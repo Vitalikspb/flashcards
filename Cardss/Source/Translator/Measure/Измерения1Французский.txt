@@ -1,0 +1,20 @@
+distance
+longueur
+la taille
+profondeur
+Obliger
+la vitesse
+kilomètre
+kilogramme
+kg.
+sonner
+largeur
+pouce
+gallon
+litre
+mètre
+poids
+temps
+fort
+calmer
+niveau de volume

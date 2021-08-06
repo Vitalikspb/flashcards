@@ -1,0 +1,21 @@
+minute
+hour
+a week
+day of week
+year
+century
+day before yesterday
+yesterday
+Today
+tonight
+tomorrow
+day after tomorrow
+in the morning
+in the evening
+at dawn
+On the Sunset
+at midnight
+at lunch
+early
+late
+came on time

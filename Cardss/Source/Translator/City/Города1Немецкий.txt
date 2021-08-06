@@ -1,0 +1,19 @@
+Haus
+Gebäude
+ein Ort
+Eingang
+Ausgabe
+Center
+Hof
+Dach
+Zaun
+Land
+Dorf
+die Schule
+Universität
+Theater
+Kirche
+ein Restaurant
+Cafe
+Hotel
+Bank

@@ -1,0 +1,22 @@
+nome
+cognome
+patronimico
+nome da nubile
+Data di nascita
+Luogo di nascita
+indirizzo
+stato civile
+single / celibe
+solo andata (sul biglietto)
+sposato
+diluito
+vedovo
+Un bambino
+due bambini
+Disabilitato
+Uomo
+femmina
+sanzioni
+bene
+imposta
+per cento

@@ -1,0 +1,20 @@
+distancia
+largo
+altura
+profundidad
+fuerza
+velocidad
+kilómetro
+kilogramo
+lb.
+sonar
+ancho
+pulgada
+galón
+litro
+metro
+peso
+hora
+fuerte
+tranquilo
+nivel de volumen

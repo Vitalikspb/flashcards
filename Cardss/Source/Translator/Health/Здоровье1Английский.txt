@@ -1,0 +1,14 @@
+healthy
+sick
+disease
+heat
+cough
+runny nose
+sneeze
+pain
+headache
+flu
+bruise
+to breake a hand
+toothache
+contact lenses

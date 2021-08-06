@@ -1,0 +1,20 @@
+jeans
+trousers
+shorts
+dress
+jacket
+coat
+T-shirt
+shirt
+skirt
+blouse
+sweater
+cap
+scarf
+shoes
+boots
+wear
+put on
+take off
+dress
+undress

@@ -1,0 +1,578 @@
+
+
+// MARK: - Shared
+// Заново (очистить экран и начать заново заполнять форму)
+"Shared.anew" = "重新";
+// Готово
+"Shared.done" = "好了";
+// Закрыть
+"Shared.close" = "关闭";
+// ок
+"Shared.ok" = "好的";
+// ошибка
+"Shared.error" = "错误";
+// Сохранить
+"Shared.save" = "存档";
+// Удалить
+"Shared.delete" = "删除";
+// Terms of Use
+"Shared.termsOfUse" = "Terms Of Use";
+// Privacy Policy
+"Shared.privacyPolicy" = "Privacy Policy";
+// Предупреждение (предупрежление об ошибке)
+"Shared.warning" = "警告";
+// Ошибка оплаты
+"Shared.errorWithPurchase" = "付款错误";
+// попробуйте немного позже
+"Shared.tryAgainLater" = "请再试一试";
+// Продолжить
+"Shared.continueBuyButton" = "继续";
+// Восстановить (покупки)
+"Shared.restore" = "恢复";
+// Без рекламы
+"Shared.noAds" = "无广告";
+// Использование библиотеки (библиотека карточек со словами)
+"Shared.useLibrary" = "使用程序库";
+// Все функции (Доступны все функции)
+"Shared.workWithAllFunction" = "所有的功能";
+// Название темы
+"Shared.defaultTheme" = "题目名称";
+// Название коллекции (коллекция карточек)
+"Shared.noThemeName" = "收藏品名称";
+// Количество изучаемых слов должно быть равно 5 или больше
+"Shared.errorCountOfNewWords" = "学习词数应等于5或以上";
+// Время обучения (время обучения того или иного материала)
+"Shared.educationTime" = "学习时间";
+// час
+"Shared.hour" = "小时";
+// минут
+"Shared.minute" = "分钟";
+// Количество повторений
+"Shared.repeatsCount" = "重复次数";
+// Все слова
+"Shared.allWords" = "所有的词";
+// Выученные слова
+"Shared.learnedWords" = "学好的词";
+// минуты -> м. ( сокращение от слова минуты желательно использовать одну букву)
+"Shared.minuteShort" = "分钟";
+// час -> ч ( сокращение от слова час желательно использовать одну букву)
+"Shared.hourShort" = "小时";
+// за все время
+"Shared.allTimeEducation" = "所有的时间";
+// за 7 дней
+"Shared.sevenDayEducation" = "7日";
+// Получить премиум
+"Shared.getPremium" = "获得超级订阅";
+
+
+
+// MARK: - Languages
+// Русский
+"Languages.russian" = "俄语";
+// Английский
+"Languages.english" = "英语";
+// Немецкий
+"Languages.german" = "德育";
+// Итальянский
+"Languages.italy" = "意大利语";
+// Испанский
+"Languages.spanish" = "西班牙语";
+// Китайский
+"Languages.chine" = "汉语";
+// Арабский
+"Languages.arabic" = "阿拉伯语";
+// Португальский
+"Languages.portugal" = "葡萄牙语";
+// Индонезийский
+"Languages.indonezian" = "印度尼西亚语";
+// Французский
+"Languages.french" = "法语";
+// Японский
+"Languages.japan" = "日本语";
+// Шведский
+"Languages.swedish" = "瑞典语";
+// Турецкий
+"Languages.turkish" = "土耳其语";
+// Корейский
+"Languages.korean" = "韩语";
+// Вьетнамский
+"Languages.vietman" = "越南语";
+// Тайский
+"Languages.thai" = "泰国语";
+
+
+
+// MARK: - AddNewWordsVC
+// Введите тему
+"AddNewWordsVC.enterTheme" = "请输入题目";
+// библиотека
+"AddNewWordsVC.library" = "程序库";
+// Иностранный язык
+"AddNewWordsVC.foreignLanguage" = "外语";
+// Родной язык
+"AddNewWordsVC.nativeLanguage" = "母语";
+// Разное количество строк
+"AddNewWordsVC.countOfLinesError" = "不同行数";
+// Новые
+"AddNewWordsVC.new" = "新";
+// Название
+"AddNewWordsVC.name" = "名称";
+// Добавить
+"AddNewWordsVC.add" = "加";
+// Изменить
+"AddNewWordsVC.change" = "变化";
+// Введите название
+"AddNewWordsVC.setName" = "请输入名称";
+// Введите слова в верхнее поле
+"AddNewWordsVC.setNativeWords" = "请在上域输入词";
+// Введите слова в нижнее поле
+"AddNewWordsVC.setForeignWords" = "请在下域输入词";
+// Часть 1 (другими словами часть какого то раздела - первая часть, вторая часть и тд)
+"AddNewWordsVC.beginer" = "第二部";
+// Часть 2
+"AddNewWordsVC.middle" = "第三部";
+// Часть 3
+"AddNewWordsVC.middlePlus" = "第四部";
+// Часть 4
+"AddNewWordsVC.advanced" = "第五部";
+// Часть 5
+"AddNewWordsVC.advancedPlus" = "第六部分";
+
+
+
+
+
+// MARK: - CardsVC
+// Редактирование
+"CardsVC.addNewCards" = "校订";
+// Добавить коллекцию
+"CardsVC.edit" = "加收藏品";
+// Название
+"CardsVC.name" = "名称";
+// Дата
+"CardsVC.date" = "日期";
+
+
+
+
+
+
+// MARK: - StatisticsVC
+// Статистика
+"StatisticsVC.statistic" = "统计";
+// Выученные слова
+"StatisticsVC.learnedWords" = "学好词";
+// Время обучения
+"StatisticsVC.educationTime" = "学习时间";
+// Повторения
+"StatisticsVC.repeats" = "重复次";
+// слов
+"StatisticsVC.word" = "词";
+
+
+
+
+
+
+// MARK: - SettingVC
+// Показывать подсказки
+"SettingVC.showHints" = "放映提醒";
+// Цвет темы
+"SettingVC.themeColor" = "题目颜色";
+// голос (диктор)
+"SettingVC.voice" = "声音";
+// Оценить ( оценить приложение в магазине)
+"SettingVC.estimate" = "评价";
+// Поделиться ( поделиться приложение с другом)
+"SettingVC.share" = "分享";
+// Поддержка ( написать в поддержку)
+"SettingVC.support" = "支持";
+// Автоматическая тема ( тема подразумевается приложение будет светлое или темное)
+"SettingVC.unspecified" = "自动题目";
+// Темная (тема приложениея)
+"SettingVC.dark" = "深色";
+// Светлая (тема приложениея)
+"SettingVC.light" = "浅色";
+// Настройки
+"SettingVC.settings" = "设置";
+// Аккаунт
+"SettingVC.account" = "帐号";
+
+// Случайный порядок карточек
+"SettingVC.randomList" = "卡的偶然序列";
+// Тест или карточки (Учить слова тестом или карточкой)
+"SettingVC.testOrCards" = "测验或卡";
+// Обучение
+"SettingVC.leanrOfCards" = "教育";
+// Какую сторону учим
+"SettingVC.whichCardDoYouLearn" = "哪个行我们学习";
+// Верхнюю ( учим верхнюю карточку)
+"SettingVC.left" = "上个";
+// Нижнюю ( учим нижнюю карточку)
+"SettingVC.right" = "下个";
+// Случайную ( учим случайную карточку)
+"SettingVC.random" = "偶然";
+// Ночной режим
+"SettingVC.nightMode" = "夜间模式";
+// Уведомления
+"SettingVC.notifications" = "通知";
+
+
+
+
+
+
+// MARK: - NotificationVC
+// Укажите день недели
+"NotificationVC.errorDay"  = "请指星期几";
+// Введите название
+"NotificationVC.errorName" = "请输入名称";
+// Уведомления ( имеется в виду появляющиеся уведомления в приложении)
+"NotificationVC.notification" = "通知";
+// Название уведомления
+"NotificationVC.name" = "通知名称";
+// Введите название уведомления
+"NotificationVC.nameError" = "请输入通知的名称";
+// Понедельник
+"NotificationVC.monday"    = "星期一";
+// Вторник
+"NotificationVC.tuesday"   = "星期二";
+// Среда
+"NotificationVC.wednesday" = "星期三";
+// Четверг
+"NotificationVC.thursday"  = "星期四";
+// Пятница
+"NotificationVC.friday"    = "星期五";
+// Суббота
+"NotificationVC.saturday"  = "星期六";
+// Воскресенье
+"NotificationVC.sunday"    = "星期日";
+// пн (сокращение от дня недели)
+"NotificationVC.mondayShort"         = "星期一";
+// вт (сокращение от дня недели)
+"NotificationVC.tuesdayShort"        = "星期二";
+// ср (сокращение от дня недели)
+"NotificationVC.wednesdayShort"      = "星期三";
+// чт (сокращение от дня недели)
+"NotificationVC.thursdayShort"       = "星期四";
+// пт (сокращение от дня недели)
+"NotificationVC.fridayShort"         = "星期五";
+// сб (сокращение от дня недели)
+"NotificationVC.saturdayShort"       = "星期六";
+// Вс (сокращение от дня недели)
+"NotificationVC.sundayShort"         = "星期日";
+// Пора учить карточки
+"NotificationVC.notificationString1" = "就是学习卡的时间!";
+// Давно тебя не видели
+"NotificationVC.notificationString2" = "好久不看见你!";
+// Учить карточки
+"NotificationVC.notificationString3" = "学习卡!";
+// Сейчас начнется обучение
+"NotificationVC.notificationString4" = "现在教育将开始!";
+// Есть пару минут для обучения
+"NotificationVC.notificationString5" = "有没有两分钟为学习?";
+// Давай учиться
+"NotificationVC.notificationString6" = "学习吧!";
+// Новые слова ждут тебя
+"NotificationVC.notificationString7" = "新词等待你!";
+
+
+
+
+
+
+
+// MARK: - EducationVC
+// обучение
+"EducationVC.education" = "教育";
+// начать
+"EducationVC.start" = "开始";
+
+
+
+
+
+// MARK: - AddPackOfCardToLearnVC
+// Выбрать карточки
+"AddPackOfCardToLearnVC.chooseForLearning" = "选择卡";
+
+
+
+
+
+// MARK: - ChooseGroupOfCards
+// - MARK: ChooseGroupOfCards
+
+
+// Родственники
+"ChooseGroupOfCards.family" = "亲戚";
+// погода
+"ChooseGroupOfCards.wheather" = "天气";
+
+// внешность 1
+"ChooseGroupOfCards.appearance1" = "外貌，第一部";
+// внешность 2
+"ChooseGroupOfCards.appearance2" = "外貌，第二部";
+// характер
+"ChooseGroupOfCards.character" = "性格";
+// настроение
+"ChooseGroupOfCards.mood" = "情绪";
+// мой день
+"ChooseGroupOfCards.myDay" = "我日";
+// школа
+"ChooseGroupOfCards.school" = "学校";
+// хобби
+"ChooseGroupOfCards.hobby" = "业余爱好";
+// книги 1
+"ChooseGroupOfCards.books1" = "书，第一部";
+// книги 2
+"ChooseGroupOfCards.books2" = "书，第二部";
+// книги 3
+"ChooseGroupOfCards.books3" = "书，第三部";
+// еда 1
+"ChooseGroupOfCards.food1" = "食物，第一部";
+// еда 2
+"ChooseGroupOfCards.food2" = "食物，第二部";
+// еда 3
+"ChooseGroupOfCards.food3" = "食物，第三部";
+// еда 4
+"ChooseGroupOfCards.food4" = "食物，第四部";
+// еда 5
+"ChooseGroupOfCards.food5" = "食物，第五部";
+// одежда 1
+"ChooseGroupOfCards.clother1" = "衣服，第一部";
+// одежда 2
+"ChooseGroupOfCards.clother2" = "衣服，第二部";
+// природа 1
+"ChooseGroupOfCards.nature1" = "自然，第一部";
+// природа 2
+"ChooseGroupOfCards.nature2" = "自然，第二部";
+// путешествие
+"ChooseGroupOfCards.travel" = "旅行";
+// вечеринки
+"ChooseGroupOfCards.party" = "晚会";
+// Род занятий
+"ChooseGroupOfCards.job1" = "职业，第一部";
+// Род занятий
+"ChooseGroupOfCards.job2" = "职业，第二部";
+// Род занятий
+"ChooseGroupOfCards.job3" = "职业，第三部";
+// Спорт
+"ChooseGroupOfCards.sport" = "运动";
+// Дом 1
+"ChooseGroupOfCards.home1" = "家";
+// Мебель 1
+"ChooseGroupOfCards.home2" = "家具";
+// города 1
+"ChooseGroupOfCards.city1" = "城市，第一部";
+// города 2
+"ChooseGroupOfCards.city2" = "城市，第二部";
+// города 3
+"ChooseGroupOfCards.city3" = "城市，第三部";
+
+// глаголы 1
+"ChooseGroupOfCards.verb1" = "动词，第一部";
+// глаголы 2
+"ChooseGroupOfCards.verb2" = "动词，第二部";
+// глаголы 3
+"ChooseGroupOfCards.verb3" = "动词，第三部";
+// глаголы 4
+"ChooseGroupOfCards.verb4" = "动词，第四部";
+
+// другие 1
+"ChooseGroupOfCards.other1" = "其他，第一部";
+// другие 2
+"ChooseGroupOfCards.other2" = "其他，第二部";
+// другие 3
+"ChooseGroupOfCards.other3" = "其他，第三部";
+// другие 4
+"ChooseGroupOfCards.other4" = "其他，第四部";
+// другие 5
+"ChooseGroupOfCards.other5" = "其他，第五部";
+// прилагательные 1
+"ChooseGroupOfCards.adjective1" = "形容词，第一部";
+// прилагательные 2
+"ChooseGroupOfCards.adjective2" = "形容词，第二部";
+// прилагательные 3
+"ChooseGroupOfCards.adjective3" = "形容词，第三部";
+// прилагательные 4
+"ChooseGroupOfCards.adjective4" = "形容词，第四部";
+// прилагательные 5
+"ChooseGroupOfCards.adjective5" = "形容词，第五部";
+// Цвет
+"ChooseGroupOfCards.color" = "颜色";
+// События
+"ChooseGroupOfCards.event" = "事件";
+// Цифры 1
+"ChooseGroupOfCards.number1" = "数字，第一部";
+// Цифры 2
+"ChooseGroupOfCards.number2" = "数字，第二部";
+// предлоги
+"ChooseGroupOfCards.preposition" = "介词";
+// местоимения
+"ChooseGroupOfCards.pronomen" = "代词";
+// вопросы
+"ChooseGroupOfCards.question" = "问题";
+// чувства
+"ChooseGroupOfCards.feeling" = "感觉";
+// измерения
+"ChooseGroupOfCards.measure" = "测量";
+// покупки
+"ChooseGroupOfCards.purchase" = "买到的东西";
+// искусство
+"ChooseGroupOfCards.art" = "艺术";
+// вещи 1
+"ChooseGroupOfCards.thing1" = "东西，第一部";
+// вещи 2
+"ChooseGroupOfCards.thing2" = "东西，第二部";
+// вещи 3
+"ChooseGroupOfCards.thing3" = "东西，第三部";
+// здоровье
+"ChooseGroupOfCards.health" = "健康";
+// посуда
+"ChooseGroupOfCards.dishes" = "器皿";
+// Бланк
+"ChooseGroupOfCards.blank" = "表格";
+// время
+"ChooseGroupOfCards.time1" = "时间";
+// Дни недели
+"ChooseGroupOfCards.time2" = "星期的日";
+// месяца
+"ChooseGroupOfCards.time3" = "月";
+// транспорт
+"ChooseGroupOfCards.transport" = "运输工具";
+// люди
+"ChooseGroupOfCards.people" = "人们";
+// животные
+"ChooseGroupOfCards.animal" = "动物";
+// Выбрать родной язык
+"ChooseGroupOfCards.chooseNativeLang" = "选择您的母语";
+// Выбрать иностранный язык
+"ChooseGroupOfCards.chooseForeignLang" = "选择外语";
+// Добавить
+"ChooseGroupOfCards.Add" = "加";
+// Выбрать тему
+"ChooseGroupOfCards.needChooseTheme" = "我需要选择一个话题";
+// иностранный язык
+"ChooseGroupOfCards.foreignLang" = "外语";
+// родной язык
+"ChooseGroupOfCards.nativeLang" = "母语";
+
+
+
+
+//  MARK: - TypeOfCardsTheme
+
+
+// семья
+"TypeOfCardsTheme.familyTheme" = "家庭";
+// погода
+"TypeOfCardsTheme.wheatherTheme" = "天气";
+// внешность
+"TypeOfCardsTheme.appearanceTheme" = "外貌";
+// характер
+"TypeOfCardsTheme.characterTheme" = "性格";
+// настроение
+"TypeOfCardsTheme.moodTheme" = "情绪";
+// мой день
+"TypeOfCardsTheme.myDayTheme" = "我日";
+// школа
+"TypeOfCardsTheme.schoolTheme" = "学校";
+// хобби
+"TypeOfCardsTheme.hobbyTheme" = "业余爱好";
+// книги
+"TypeOfCardsTheme.booksTheme" = "书";
+// еда
+"TypeOfCardsTheme.foodTheme" = "食物";
+// одежда
+"TypeOfCardsTheme.clotherTheme" = "衣服";
+// природа
+"TypeOfCardsTheme.natureTheme" = "自然";
+// путешествие
+"TypeOfCardsTheme.travelTheme" = "旅行";
+// дом
+"TypeOfCardsTheme.homeTheme" = "家";
+// вечеринка
+"TypeOfCardsTheme.partyTheme" = "晚会";
+// работа
+"TypeOfCardsTheme.jobTheme" = "工作";
+// спорт
+"TypeOfCardsTheme.sportTheme" = "运动";
+// город
+"TypeOfCardsTheme.cityTheme" = "城市";
+// глаголы
+"TypeOfCardsTheme.verbTheme" = "动词";
+// Другое
+"TypeOfCardsTheme.otherTheme" = "其他";
+// прилагательные
+"TypeOfCardsTheme.adjectiveTheme" = "形容词";
+// цвет
+"TypeOfCardsTheme.colorTheme" = "颜色";
+// события
+"TypeOfCardsTheme.eventTheme" = "事件";
+// цифры
+"TypeOfCardsTheme.numberTheme" = "数字";
+// предлоги
+"TypeOfCardsTheme.prepositionTheme" = "介词";
+// местоимения
+"TypeOfCardsTheme.pronomenTheme" = "代词";
+// вопросы
+"TypeOfCardsTheme.questionTheme" = "问题";
+// чувства
+"TypeOfCardsTheme.feelingTheme" = "感觉";
+// измерения
+"TypeOfCardsTheme.measureTheme" = "测量";
+// покупки
+"TypeOfCardsTheme.purchaseTheme" = "买到的东西";
+// искусство
+"TypeOfCardsTheme.artTheme" = "艺术";
+// вещи
+"TypeOfCardsTheme.thingTheme" = "东西";
+// здоровье
+"TypeOfCardsTheme.healthTheme" = "健康";
+// посуда
+"TypeOfCardsTheme.dishesTheme" = "器皿";
+// мебель
+"TypeOfCardsTheme.furnitureTheme" = "家具";
+// время
+"TypeOfCardsTheme.timeTheme" = "时间";
+// транспорт
+"TypeOfCardsTheme.transportTheme" = "运输工具";
+// люди
+"TypeOfCardsTheme.peopleTheme" = "人们";
+// животные
+"TypeOfCardsTheme.animalTheme" = "动物";
+}
+
+
+
+
+
+
+//  MARK: - AccountVC
+// Сбросить пароль?
+"AccountVC.resetPassword" = "重置密码吗?";
+// Да, на почту
+"AccountVC.yesToMail" = "对，用电子邮件";
+// Зарегистрироватся
+"AccountVC.register" = "登记";
+// Войти
+"AccountVC.signIn" = "登录";
+// Придумайте пароль
+"AccountVC.createPassword" = "请编造密码";
+// Введите пароль
+"AccountVC.enterPassword" = "请输入密码";
+// Введите имя
+"AccountVC.enterName" = "请输入名字";
+// Выйти
+"AccountVC.logout" = "登出";
+// Ваш логин:
+"AccountVC.youSignInWithLogin" = "您的用户名:";
+// Введите почту
+"AccountVC.enterMail" = "请输入电子邮件";
+// Вошли в систему!
+"AccountVC.loginSuccess" = "您已登录系统!";
+// Успешно зарегистрировались!
+"AccountVC.registerSuccess" = "您已登记好!";
+// Карточки сохраняются в облаке и будут загружаться с других ваших устройств на этом аккаунте
+"AccountVC.messageSuccess" = "卡在云端存档并在这个帐号从您别的小器具将下载";

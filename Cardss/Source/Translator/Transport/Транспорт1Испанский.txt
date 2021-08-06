@@ -1,0 +1,15 @@
+avión
+helicóptero
+bote inflable
+yate
+Metro
+carro
+tranvía
+autobús
+un tren
+Embarcacion
+bicicleta
+Motocicleta
+ciclomotor
+limusina
+trolebús

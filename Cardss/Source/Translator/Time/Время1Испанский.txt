@@ -1,0 +1,21 @@
+minuto
+hora
+una semana
+día de la semana
+año
+siglo
+Anteayer
+ayer
+Hoy
+esta noche
+mañana
+Pasado mañana
+en la mañana
+Por la tarde
+en la madrugada
+En la puesta del sol
+a la medianoche
+en el almuerzo
+temprano
+tarde
+llegó a tiempo

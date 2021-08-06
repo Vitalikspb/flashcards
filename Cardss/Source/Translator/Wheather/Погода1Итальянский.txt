@@ -1,0 +1,24 @@
+tempo metereologico
+bellissimo
+orribile
+freddo
+caldo
+caldo
+cielo
+il Sole
+pioggia
+vento
+nube
+neve
+solare
+piovoso
+ventoso
+nuvoloso
+luminoso
+neve
+piove
+nevicando
+soffio
+brillare
+riscaldarsi
+modificare

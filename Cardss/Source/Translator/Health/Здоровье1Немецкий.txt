@@ -1,0 +1,14 @@
+gesund
+krank
+Erkrankung
+Hitze
+Husten
+laufende Nase
+niesen
+Schmerzen
+Kopfschmerzen
+Grippe
+Prellung
+eine Hand brechen
+Zahnschmerzen
+Kontaktlinsen

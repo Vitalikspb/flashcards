@@ -1,0 +1,21 @@
+minute
+heure
+une semaine
+jour de la semaine
+an
+siècle
+Avant-hier
+hier
+Aujourd'hui
+ce soir
+demain
+après demain
+du matin
+dans la soirée
+à l'aube
+Au coucher du soleil
+à minuit
+au déjeuner
+tôt
+en retard
+est venu à l'heure

@@ -1,0 +1,22 @@
+Nom
+nom de famille
+patronyme
+nom de jeune fille
+Date de naissance
+Lieu de naissance
+adresse
+état civil
+célibataire / célibataire
+aller simple (à propos du ticket)
+marié
+dilué
+veuf
+un enfant
+deux enfants
+désactivée
+Homme
+femelle
+pénalités
+amende
+impôt
+pour cent

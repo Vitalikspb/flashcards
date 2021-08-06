@@ -1,0 +1,13 @@
+eine Tasse
+Glas
+Tasse
+Teller
+der Löffel
+Gabel
+Messer
+Untertasse
+Flasche
+Serviette
+Pfanne
+Bratpfanne
+Teekanne

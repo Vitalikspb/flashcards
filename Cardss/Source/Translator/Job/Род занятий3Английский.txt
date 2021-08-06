@@ -1,0 +1,21 @@
+a student
+a housewife
+a policeman (police officer)
+a fireman
+a security guard
+a bodyguard
+a life guard
+a banker
+an engineer
+a programmer
+a scientist
+a translator
+an interpreter
+a model
+a postman
+a librarian
+a sportsman
+a professional footballer
+a cook (chef)
+a lawyer
+job

@@ -1,0 +1,23 @@
+forty
+fifty
+sixty
+seventy
+eighty
+ninety
+one hundred
+one thousand
+first
+second
+the third
+fourth
+fifth
+two
+three
+four
+five
+first
+last
+first from the end
+numeral
+number
+order

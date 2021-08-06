@@ -1,0 +1,20 @@
+rápido
+rápido
+lento
+suave
+sólido
+triste
+contento
+contento
+amable
+enfadado
+maldad
+educado
+maleducado
+tierno
+Bravo
+cobardemente
+tímido
+trabajo duro
+perezoso
+útil

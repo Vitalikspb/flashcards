@@ -1,0 +1,29 @@
+padre
+madre
+genitori
+figlio
+figlia
+sorella
+fratello
+cugino (o sorella)
+fratello sorella)
+secondo cugino (sorella)
+Gemelli
+zia
+zio
+nipote
+nipote
+Nonno
+nonna
+nonno e nonna
+bisnonna
+bisnonno
+nipote
+nipotina
+marito
+moglie
+bambino
+bambini
+nipoti
+ragazzo
+parente

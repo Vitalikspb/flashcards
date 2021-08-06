@@ -1,0 +1,19 @@
+gatto
+cane
+uccello
+scoiattolo
+lupo
+Oca
+giraffa
+coniglio
+mucca
+ratto
+una volpe
+cavallo
+rana
+orso
+topo
+una scimmia
+maiale
+elefante
+anatra

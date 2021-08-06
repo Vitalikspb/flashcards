@@ -1,0 +1,20 @@
+cinéma
+hôpital
+police
+bureau de poste
+gare
+l'aéroport
+But
+pharmacie
+marché
+Bureau
+entreprise
+usine
+surface
+rue
+route
+carrefour
+arrêter
+trottoir
+Piste
+jardin

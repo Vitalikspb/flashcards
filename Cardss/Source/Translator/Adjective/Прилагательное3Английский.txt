@@ -1,0 +1,20 @@
+pretty
+ugly
+tall
+short
+a long
+heavy
+easy
+difficult
+easy
+plain
+dark
+expensive (for the price)
+nice
+cheap
+poor
+rich
+straight
+left
+right
+wrong

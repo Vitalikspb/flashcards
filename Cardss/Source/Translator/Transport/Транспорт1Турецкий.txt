@@ -1,0 +1,15 @@
+uçak
+helikopter
+şişme bot
+yat
+Metro
+araba
+tramvay
+otobüs
+Bir tren
+gemi
+bisiklet
+Motosiklet
+moped
+limuzin
+troleybüs

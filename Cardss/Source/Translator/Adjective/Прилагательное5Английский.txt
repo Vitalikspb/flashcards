@@ -1,0 +1,20 @@
+useless
+strong
+weak
+loud
+noisy
+quiet
+calm
+narrow
+wide
+clean
+dirty
+tired
+fair
+comfortable
+strange
+strange
+own
+tasty
+very tasty
+bitter

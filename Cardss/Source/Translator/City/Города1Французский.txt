@@ -1,0 +1,19 @@
+loger
+imeuble
+un endroit
+entrée
+production
+Centre
+Cour
+toit
+clôture
+terre
+village
+école
+Université
+théâtre
+église
+un restaurant
+Café
+Hôtel
+Banque

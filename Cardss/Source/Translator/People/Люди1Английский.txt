@@ -1,0 +1,15 @@
+man
+woman
+child
+boy
+girl
+guy
+friend
+acquaintance
+neighbor
+guest
+chief
+boss
+competitor
+client
+colleague

@@ -1,0 +1,19 @@
+Casa
+edificio
+un posto
+Ingresso
+produzione
+Centro
+cortile
+tetto
+recinzione
+terra
+villaggio
+scuola
+Università
+Teatro
+Chiesa
+un ristorante
+bar
+Hotel
+banca

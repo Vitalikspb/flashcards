@@ -1,0 +1,21 @@
+el tamaño
+precio
+dinero
+dinero en efectivo
+descuento
+cuenta bancaria
+puntaje
+inclinar
+Rendición
+Pago con tarjeta de crédito
+cantidad total
+nimiedad
+divisa
+intercambiador
+Los tipos de cambio
+comisión
+saldo de la cuenta
+fondos insuficientes
+error en el pago
+pago realizado
+pagado exitosamente
