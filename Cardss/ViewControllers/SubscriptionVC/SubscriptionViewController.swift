@@ -11,6 +11,7 @@ import SwiftyStoreKit
 final class SubscriptionViewController: UIViewController {
     
     // MARK: - UI Elements
+    
     private lazy var closeView = UIView()
     private lazy var closeImage = UIImageView()
     private lazy var restoreButton = UILabel()
@@ -61,7 +62,6 @@ final class SubscriptionViewController: UIViewController {
         setupView()
         selectedPriceChanged()
         setupPurchases()
-//        loadPurchase()
         setupConstraints()
         setupNotifications()
     }
@@ -76,24 +76,10 @@ final class SubscriptionViewController: UIViewController {
     }
 }
 
+// MARK: - setupNotifications
+
 extension SubscriptionViewController {
     func setupNotifications() {
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(reloadData),
-//                                               name: NSNotification.Name(PurchaseManager.productNotificationIdentifier),
-//                                               object: nil)
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(completeTwelveMonthConsumable),
-//                                               name: NSNotification.Name(AppProducts.twelveMonth.rawValue),
-//                                               object: nil)
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(completeSixMonthConsumable),
-//                                               name: NSNotification.Name(AppProducts.sixMonth.rawValue),
-//                                               object: nil)
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(completeOneMonthConsumable),
-//                                               name: NSNotification.Name(AppProducts.oneMonth.rawValue),
-//                                               object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(failureToRestore),
                                                name: NSNotification.Name(PurchaseReceiveMessage.failToRestore.rawValue),
@@ -108,6 +94,12 @@ extension SubscriptionViewController {
                                                object: nil)
         
     }
+    
+}
+
+// MARK: - Helpers function
+
+extension SubscriptionViewController {
     @objc func closeTapped() {
         self.dismiss(animated: true, completion: nil)
     }
@@ -115,9 +107,6 @@ extension SubscriptionViewController {
         setupPurchases()
         updateBuyButton()
     }
-}
-
-extension SubscriptionViewController {
     func presentError() {
         let alertController = CreateAlerts.errorAlert(with: AppSource.Text.Shared.errorWithPurchase,
                                                       and: AppSource.Text.Shared.tryAgainLater)
@@ -144,18 +133,6 @@ extension SubscriptionViewController {
         failureEndOfRestore()
         presentError()
     }
-//    @objc func completeOneMonthConsumable() {
-//        addedExpDate(month: 1)
-//        successEndOfPurchase()
-//    }
-//    @objc func completeSixMonthConsumable() {
-//        addedExpDate(month: 6)
-//        successEndOfPurchase()
-//    }
-//    @objc func completeTwelveMonthConsumable() {
-//        addedExpDate(month: 12)
-//        successEndOfPurchase()
-//    }
 
     @objc func selectedPriceChanged() {
         switch priceGroup.selectedIndex {
@@ -165,70 +142,6 @@ extension SubscriptionViewController {
         default:
             print("error id")
         }
-    }
-    func setPremium(_ premium: Bool) {
-        
-        if premium {
-            UserDefaults.standard.synchronize()
-            UserDefaults.standard.set(true, forKey: UserDefaults.premium)
-            dismiss(animated: true, completion: nil)
-        }
-        buyButton.isLoading = false
-        restoreButton.isUserInteractionEnabled = true
-    }
-    
-    func setupPurchases() {
-
-        SwiftyStoreKit.retrieveProductsInfo([AppProducts.twelveMonth.rawValue]) { result in
-            if let product = result.retrievedProducts.first {
-                self.oneYearPrice = product.localizedPrice!
-                self.oneYearTitle = product.localizedTitle
-                self.yearPriceView.do {
-                    $0.priceLabel.text = self.oneYearPrice
-                    $0.periodLabel.text = self.oneYearTitle
-                }
-                self.updateBuyButton()
-            }
-            else if let invalidProductId = result.invalidProductIDs.first {
-                print("Invalid product identifier: \(invalidProductId)")
-            }
-            else {
-                print("Error: \(result.error)")
-            }
-        }
-        SwiftyStoreKit.retrieveProductsInfo([AppProducts.sixMonth.rawValue]) { result in
-            if let product = result.retrievedProducts.first {
-                    self.sixMonthPrice = product.localizedPrice!
-                    self.sixMonthTitle = product.localizedTitle
-                self.sixMonthPriceView.do {
-                    $0.priceLabel.text = self.sixMonthPrice
-                    $0.periodLabel.text = self.sixMonthTitle
-                }
-            }
-            else if let invalidProductId = result.invalidProductIDs.first {
-                print("Invalid product identifier: \(invalidProductId)")
-            }
-            else {
-                print("Error: \(result.error)")
-            }
-        }
-        SwiftyStoreKit.retrieveProductsInfo([AppProducts.oneMonth.rawValue]) { result in
-            if let product = result.retrievedProducts.first {
-                self.oneMonthPrice = product.localizedPrice!
-                self.oneMonthTitle = product.localizedTitle
-                self.oneMonthView.do {
-                    $0.priceLabel.text = self.oneMonthPrice
-                    $0.periodLabel.text = self.oneMonthTitle
-                }
-            }
-            else if let invalidProductId = result.invalidProductIDs.first {
-                print("Invalid product identifier: \(invalidProductId)")
-            }
-            else {
-                print("Error: \(result.error)")
-            }
-        }
-        
     }
     
     func updateBuyButton() {
@@ -260,6 +173,11 @@ extension SubscriptionViewController {
         buyButton.titleLabel.attributed.text = AttributedString(string: AppSource.Text.Shared.continueBuyButton, with: top) + "\n" + AttributedString(string: "\(price) / \(period)", with: bottom)
         
     }
+}
+
+//MARK: - Selectors
+
+extension SubscriptionViewController {
     
     @objc func restoreTapped() {
         buyButton.isUserInteractionEnabled = false
@@ -339,6 +257,76 @@ extension SubscriptionViewController {
     @objc func privacyLabelLeftTapped() {
         UIApplication.shared.open(AppSource.Constants.termsOfUseURL)
     }
+}
+
+// MARK: - Handler Purchase
+
+extension SubscriptionViewController {
+    
+    func setPremium(_ premium: Bool) {
+        
+        if premium {
+            UserDefaults.standard.synchronize()
+            UserDefaults.standard.set(true, forKey: UserDefaults.premium)
+            dismiss(animated: true, completion: nil)
+        }
+        buyButton.isLoading = false
+        restoreButton.isUserInteractionEnabled = true
+    }
+    
+    func setupPurchases() {
+
+        SwiftyStoreKit.retrieveProductsInfo([AppProducts.twelveMonth.rawValue]) { result in
+            if let product = result.retrievedProducts.first {
+                self.oneYearPrice = product.localizedPrice!
+                self.oneYearTitle = product.localizedTitle
+                self.yearPriceView.do {
+                    $0.priceLabel.text = self.oneYearPrice
+                    $0.periodLabel.text = self.oneYearTitle
+                }
+                self.updateBuyButton()
+            }
+            else if let invalidProductId = result.invalidProductIDs.first {
+                print("Invalid product identifier: \(invalidProductId)")
+            }
+            else {
+                print("Error: \(result.error)")
+            }
+        }
+        SwiftyStoreKit.retrieveProductsInfo([AppProducts.sixMonth.rawValue]) { result in
+            if let product = result.retrievedProducts.first {
+                    self.sixMonthPrice = product.localizedPrice!
+                    self.sixMonthTitle = product.localizedTitle
+                self.sixMonthPriceView.do {
+                    $0.priceLabel.text = self.sixMonthPrice
+                    $0.periodLabel.text = self.sixMonthTitle
+                }
+            }
+            else if let invalidProductId = result.invalidProductIDs.first {
+                print("Invalid product identifier: \(invalidProductId)")
+            }
+            else {
+                print("Error: \(result.error)")
+            }
+        }
+        SwiftyStoreKit.retrieveProductsInfo([AppProducts.oneMonth.rawValue]) { result in
+            if let product = result.retrievedProducts.first {
+                self.oneMonthPrice = product.localizedPrice!
+                self.oneMonthTitle = product.localizedTitle
+                self.oneMonthView.do {
+                    $0.priceLabel.text = self.oneMonthPrice
+                    $0.periodLabel.text = self.oneMonthTitle
+                }
+            }
+            else if let invalidProductId = result.invalidProductIDs.first {
+                print("Invalid product identifier: \(invalidProductId)")
+            }
+            else {
+                print("Error: \(result.error)")
+            }
+        }
+        
+    }
     
     func verifyReceipt(completion: @escaping (VerifyReceiptResult) -> Void) {
         
@@ -351,7 +339,7 @@ extension SubscriptionViewController {
             switch result {
             case .success(let receipt):
                 let productId = AppProducts.oneMonth.rawValue
-                let purchaseResult = SwiftyStoreKit.verifySubscription(ofType: .autoRenewable,
+                _ = SwiftyStoreKit.verifySubscription(ofType: .autoRenewable,
                                                                        productId: productId,
                                                                        inReceipt: receipt)
             case .error:
@@ -359,13 +347,13 @@ extension SubscriptionViewController {
             }
         }
     }
+    
     func verifySubscriptions(_ purchases: Set<AppProducts>) {
         verifyReceipt { result in
             switch result {
             case .success(let receipt):
                 let productIds = Set(purchases.map { $0.rawValue })
-                let purchaseResult = SwiftyStoreKit.verifySubscriptions(productIds: productIds, inReceipt: receipt)
-//                self.presentErrorWithMessage("Success restore purchase")
+                _ = SwiftyStoreKit.verifySubscriptions(productIds: productIds, inReceipt: receipt)
                 self.setPremium(true)
             case .error:
                 print("result error: \(result)")
@@ -375,7 +363,8 @@ extension SubscriptionViewController {
     
 }
 
-// MARK: - Setup
+// MARK: - setupLayoutView, setupColors, setupView
+
 private extension SubscriptionViewController {
     
     func setupLayoutView() {

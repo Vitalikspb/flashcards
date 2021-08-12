@@ -7,6 +7,8 @@ import GoogleMobileAds
 
 class CardsViewController: UIViewController {
     
+    // MARK: - Properties
+    
     private lazy var topNameView = NameOfViewController()
     private lazy var topView = UIView()
     private lazy var addNewCardsButton = ActionButton()
@@ -19,6 +21,9 @@ class CardsViewController: UIViewController {
     private var currentCardsCollection: [CardsModel]!
     private lazy var premiumAccount: Bool = false
     private var interstitial: GADInterstitialAd?
+    private var moduleFactory = FactoryPresent()
+    
+    // MARK: - Lifecycle
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -53,6 +58,8 @@ class CardsViewController: UIViewController {
         
     }
 }
+
+// MARK: - GADFullScreenContentDelegate
 
 extension CardsViewController: GADFullScreenContentDelegate {
     func setupGoogleAds() {
@@ -92,54 +99,14 @@ extension CardsViewController: GADFullScreenContentDelegate {
       }
 }
 
+// MARK: - Helpers function
+
 private extension CardsViewController {
     
     func setupUserDefaultSettings() {
         UserDefaults.standard.synchronize()
-        if !UserDefaults.standard.bool(forKey: UserDefaults.firstLaunchPrompt) {
-            UserDefaults.standard.set(true, forKey: UserDefaults.firstLaunchPrompt)
-        }
-
         if !UserDefaults.standard.bool(forKey: UserDefaults.firstLaunchApp) {
-            UserDefaults.standard.set(false, forKey: UserDefaults.premium)
-            UserDefaults.standard.set(true, forKey: UserDefaults.firstLaunchApp)
-            UserDefaults.standard.set(true, forKey: UserDefaults.showHints)
             premiumAccount = UserDefaults.standard.bool(forKey: UserDefaults.premium)
-            
-            // при первом запуске задаем пустые значения всей базе
-            currentCardsCollection = [CardsModel(
-                                                                uid: "CardsCollection",
-                                                                educationTime: 0,
-                                                                countAllWords: 0,
-                                                                countFiveStar: 0,
-                                                                countThreeStar: 0,
-                                                                countOneStar: 0,
-                                                                repeatsCount: 0,
-                                                            countLeaningWordsSevenDays: [WeekDayCounter.returnDateOfDate()[0]: 0, // 30 - !!!Always today!!!! - friday
-                                                                                         WeekDayCounter.returnDateOfDate()[1]: 0, // 29 - thursday
-                                                                                         WeekDayCounter.returnDateOfDate()[2]: 0, // 28
-                                                                                         WeekDayCounter.returnDateOfDate()[3]: 0, // 27
-                                                                                         WeekDayCounter.returnDateOfDate()[4]: 0, // 26
-                                                                                         WeekDayCounter.returnDateOfDate()[5]: 0, // 25
-                                                                                         WeekDayCounter.returnDateOfDate()[6]: 0], // 24
-
-                                                                educationTimeSevenDays: [WeekDayCounter.returnDateOfDate()[0]: 0,    // 0 минут
-                                                                                         WeekDayCounter.returnDateOfDate()[1]: 0,  // 5 минут
-                                                                                         WeekDayCounter.returnDateOfDate()[2]: 0,  // 12 минут
-                                                                                         WeekDayCounter.returnDateOfDate()[3]: 0,  // 8 минут
-                                                                                         WeekDayCounter.returnDateOfDate()[4]: 0,   // 45 минут
-                                                                                         WeekDayCounter.returnDateOfDate()[5]: 0,  // 1ч 20мин
-                                                                                         WeekDayCounter.returnDateOfDate()[6]: 0],  // 1ч 45 мин
-
-                                                                repeatsCountSevenDays: [WeekDayCounter.returnDateOfDate()[0]: 0,
-                                                                                        WeekDayCounter.returnDateOfDate()[1]: 0,
-                                                                                        WeekDayCounter.returnDateOfDate()[2]: 0,
-                                                                                        WeekDayCounter.returnDateOfDate()[3]: 0,
-                                                                                        WeekDayCounter.returnDateOfDate()[4]: 0,
-                                                                                        WeekDayCounter.returnDateOfDate()[5]: 0,
-                                                                                        WeekDayCounter.returnDateOfDate()[6]: 0],
-                                                                cardsCollection: [])]
-            UserDefaults.saveToUD(currentCardsCollection)
         } else {
             premiumAccount = UserDefaults.standard.bool(forKey: UserDefaults.premium)
             currentCardsCollection = UserDefaults.loadFromUD()
@@ -158,7 +125,6 @@ private extension CardsViewController {
                 window.overrideUserInterfaceStyle = .dark }
         default: print("error")
         }
-        
     }
     
     func setupThemeColor() {
@@ -170,9 +136,6 @@ private extension CardsViewController {
             blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
         }
     }
-}
-
-extension CardsViewController {
     
     func updateAftedDismiss() {
         setupProperties()
@@ -205,6 +168,8 @@ extension CardsViewController {
         present(vc, animated: true, completion: nil)
     }
 }
+
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 
 extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -274,6 +239,8 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
 }
 
+// MARK: - setupColors, setupProperties, setupView
+
 extension CardsViewController {
     
     private func setupColors() {
@@ -292,20 +259,16 @@ extension CardsViewController {
         setupProperties()
 
         buttonsView.presentCardsVC = { [weak self] in
-            let vc = CardsViewController()
-            self?.present(vc, animated: true, completion: nil)
+            self?.moduleFactory.switchToSecond(toModule: .cards)
         }
         buttonsView.presentStatisticsVC = { [weak self] in
-            let vc = StatisticsViewController()
-            self?.present(vc, animated: true, completion: nil)
+            self?.moduleFactory.switchToSecond(toModule: .statistics)
         }
         buttonsView.presentSettingVC = { [weak self] in
-            let vc = SettingViewController()
-            self?.present(vc, animated: true, completion: nil)
+            self?.moduleFactory.switchToSecond(toModule: .settings)
         }
         buttonsView.presentLearnVC = { [weak self] in
-            let vc = EducationViewController()
-            self?.present(vc, animated: true, completion: nil)
+            self?.moduleFactory.switchToSecond(toModule: .education)
         }
         
         topView.do {

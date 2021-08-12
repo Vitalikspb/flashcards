@@ -66,6 +66,7 @@ class StatisticsViewController: UIViewController {
     private lazy var educationTime: Int = 0
     private var arrayOfWeekDay: [UILabel]!
     private var currentCardsCollection: [CardsModel]!
+    private var moduleFactory = FactoryPresent()
     
     let items = [AppSource.Text.StatisticsVC.learnedWords,
                  AppSource.Text.StatisticsVC.educationTime,
@@ -752,22 +753,17 @@ extension StatisticsViewController {
             $0.addSubview(starView)
         }
         
-        
         buttonsView.presentCardsVC = { [weak self] in
-            let vc = CardsViewController()
-            self?.present(vc, animated: true, completion: nil)
+            self?.moduleFactory.switchToSecond(toModule: .cards)
         }
         buttonsView.presentStatisticsVC = { [weak self] in
-            let vc = StatisticsViewController()
-            self?.present(vc, animated: true, completion: nil)
+            self?.moduleFactory.switchToSecond(toModule: .statistics)
         }
         buttonsView.presentSettingVC = { [weak self] in
-            let vc = SettingViewController()
-            self?.present(vc, animated: true, completion: nil)
+            self?.moduleFactory.switchToSecond(toModule: .settings)
         }
         buttonsView.presentLearnVC = { [weak self] in
-            let vc = EducationViewController()
-            self?.present(vc, animated: true, completion: nil)
+            self?.moduleFactory.switchToSecond(toModule: .education)
         }
         
         topNameView.do {

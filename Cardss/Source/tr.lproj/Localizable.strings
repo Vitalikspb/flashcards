@@ -544,7 +544,6 @@
 "TypeOfCardsTheme.peopleTheme" = "insanlar";
 // животные
 "TypeOfCardsTheme.animalTheme" = "havanlar";
-}
 
 
 
@@ -578,3 +577,16 @@
 "AccountVC.registerSuccess" = "Başarılı kaydoldunuz!";
 // Карточки сохраняются в облаке и будут загружаться с других ваших устройств на этом аккаунте
 "AccountVC.messageSuccess" = "Buluta yüklendiği kartlara bu hesabı kullanarak diğer cihazlarınızdan erişebilirsiniz";
+
+
+
+
+//  MARK: - ChooseLanguageVC
+// Без темы (добавлена совя коллекция без темы)
+"ChooseLanguageVC.withoutTheme" = "Konu yok";
+// Для начала использования необходимо выбрать языки
+"ChooseLanguageVC.helloLabel" = "Kullanmaya başlamak için dilleri seçmeniz gerekir";
+// Родной язык
+"ChooseLanguageVC.nativeLanguage" = "Anadil";
+// Иностранный язык
+"ChooseLanguageVC.foreignLanguage" = "Yabancı Dil";

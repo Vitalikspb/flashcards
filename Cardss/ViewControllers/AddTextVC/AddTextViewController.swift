@@ -17,22 +17,13 @@ class AddTextViewController: UIViewController {
     private lazy var headerTitleStick = UIView()
     private lazy var headerTitleLabel = UILabel()
     private lazy var doneLabel = UILabel()
-    
-    private lazy var setLanguageView = UIView()
-    private lazy var setLanguageViewWrapper = UIView()
-    private lazy var languagePickerView = UIPickerView()
-    private lazy var nativeWrapperView = ChooseButton()
     private lazy var mainTextView = UITextView()
     
     //    MARK: - Properties
     var inputText: String!
-    var setupTextFromNewTextView: ((_ curLang: String, _ curView: ShowTextView, _ curText: String) -> Void)?
+    var setupTextFromNewTextView: ((_ curView: ShowTextView, _ curText: String) -> Void)?
     var fromVC: ShowTextView = .top
-    var selectedNativeLang = ""
     private var keyboardShow = false
-    private var selectedLanguage = false
-    private var firstSelectedLanguage = 0
-    private lazy var pickerData: [String] = [String]()
     
     //    MARK: - Life cycle
     init() {
@@ -90,7 +81,7 @@ class AddTextViewController: UIViewController {
                 heightSize = 65
             }
             self.mainTextView.snp.remakeConstraints {
-                $0.top.equalTo(self.nativeWrapperView.snp.bottom).offset(15)
+                $0.top.equalTo(self.headerTitleStick.snp.bottom).offset(15)
                 $0.leading.equalToSuperview().offset(15)
                 $0.trailing.equalToSuperview().offset(-15)
                 $0.height.equalTo(frame.height - CGFloat(heightSize))
@@ -102,7 +93,7 @@ class AddTextViewController: UIViewController {
     
     @objc func willHide() {
         mainTextView.snp.remakeConstraints {
-            $0.top.equalTo(nativeWrapperView.snp.bottom).offset(15)
+            $0.top.equalTo(headerTitleStick.snp.bottom).offset(15)
             $0.leading.equalToSuperview().offset(15)
             $0.trailing.equalToSuperview().offset(-15)
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
@@ -138,7 +129,7 @@ private extension AddTextViewController {
                 // выводим ошибку что количество изучаемых слов должно быть больше 5 или больше слов
                 errorAlertWithCancel(with: AppSource.Text.Shared.errorCountOfNewWords)
             } else {
-                setupTextFromNewTextView?(selectedNativeLang, fromVC, mainTextView.text)
+                setupTextFromNewTextView?(fromVC, mainTextView.text)
                 dismiss(animated: true, completion: nil)
             }
         }
@@ -146,13 +137,13 @@ private extension AddTextViewController {
     
     
     func errorAlertWithCancel(with text: String) {
-        let alertController = CreateAlerts.errorAlertWithCancel(with: AppSource.Text.Shared.error,
-                                                                and: text) { [weak self] in
+        let alertController = CreateAlerts.errorAlertWithCancel(
+            with: AppSource.Text.Shared.error,
+            and: text) { [weak self] in
             guard let self = self else { return }
-            self.setupTextFromNewTextView?(self.selectedNativeLang, self.fromVC, "")
+            self.setupTextFromNewTextView?(self.fromVC, "")
             self.dismiss(animated: true, completion: nil)
         }
-        
         present(alertController, animated: true)
     }
     func errorAlert(with text: String) {
@@ -161,51 +152,6 @@ private extension AddTextViewController {
         present(alertController, animated: true)
     }
     
-}
-
-//    MARK: - UIPickerViewDelegate, UIPickerViewDataSource
-extension AddTextViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        
-        let myView = UIView(frame: CGRect(x: 0, y: 0, width: pickerView.bounds.width, height: 60))
-        let langImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        let langName  = UILabel(frame: CGRect(x: 0, y: 0, width: pickerView.bounds.width, height: 50))
-        
-        langImage.image = Flags.setImage(with: pickerData[row])
-        langName.text = pickerData[row]
-        myView.addSubview(langImage)
-        myView.addSubview(langName)
-        langImage.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(75)
-            $0.centerY.equalToSuperview()
-            $0.size.equalTo(30)
-        }
-        langName.snp.makeConstraints {
-            $0.leading.equalTo(langImage.snp.trailing).offset(15)
-            $0.centerY.equalToSuperview()
-            $0.trailing.equalToSuperview()
-        }
-        
-        return myView
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        nativeWrapperView.themeLabel.text = pickerData[row]
-        nativeWrapperView.image = Flags.setImage(with: pickerData[row])
-        selectedNativeLang = pickerData[row]
-        
-        if selectedNativeLang != "" {
-            doneLabel.textColor = AppSource.Color.blueTextColor
-        } else {
-            doneLabel.textColor = .lightGray
-        }
-    }
 }
 
 //    MARK: - UITextViewDelegate
@@ -231,27 +177,9 @@ private extension AddTextViewController {
         view.backgroundColor = AppSource.Color.background
         mainTextView.backgroundColor = AppSource.Color.backgroundWrapperView
     }
-    @objc func showNativeLanguageViewTapped() {
-        dismissKeyboard()
-        mainTextView.resignFirstResponder()
-        selectedLanguage = true
-        setLanguageView.isHidden = false
-    }
-    @objc func hideLanguageViewTapped() {
-        setLanguageView.isHidden = true
-    }
-    func setupProperties() {
-        pickerData = Flags.flagArrayForAddNewWord
-        for (index, element) in pickerData.enumerated() {
-            if element == selectedNativeLang {
-                firstSelectedLanguage = index
-            }
-        }
-    }
     //    MARK: - Setup View
     func setupView() {
         setupColors()
-        setupProperties()
         view.do {_ in
             let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
             tap.cancelsTouchesInView = false
@@ -281,41 +209,6 @@ private extension AddTextViewController {
             $0.textAlignment = .center
             $0.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         }
-        nativeWrapperView.do {
-            if selectedNativeLang != "" {
-                $0.themeLabel.text = pickerData[firstSelectedLanguage]
-                $0.image = Flags.setImage(with: pickerData[firstSelectedLanguage])
-            } else {
-                $0.themeLabel.text = AppSource.Text.languages.russian
-                $0.image = Flags.setImage(with: AppSource.Text.languages.russian)
-            }
-            let tap = UITapGestureRecognizer(target: self, action: #selector(showNativeLanguageViewTapped))
-            $0.addGestureRecognizer(tap)
-        }
-        setLanguageView.do {
-            $0.backgroundColor = AppSource.Color.backgroundWithAlpha
-            $0.isHidden = true
-            $0.addSubview(setLanguageViewWrapper)
-            let tap = UITapGestureRecognizer(target: self, action: #selector(hideLanguageViewTapped))
-            $0.addGestureRecognizer(tap)
-        }
-        setLanguageViewWrapper.do {
-            $0.backgroundColor = AppSource.Color.background
-            $0.layer.cornerRadius = 30
-            $0.clipsToBounds = true
-            $0.addSubview(languagePickerView)
-            $0.layer.borderWidth = 2
-            $0.layer.borderColor = AppSource.Color.background.cgColor
-        }
-        languagePickerView.do {
-            $0.delegate = self
-            $0.dataSource = self
-            if selectedNativeLang == "" {
-                selectedNativeLang = "Русский"
-            } else {
-                languagePickerView.selectRow(firstSelectedLanguage, inComponent: 0, animated: true)
-            }
-        }
         mainTextView.do {
             $0.font = UIFont.systemFont(ofSize: 16, weight: .regular)
             $0.text = inputText
@@ -331,9 +224,7 @@ private extension AddTextViewController {
     func setupConstraints() {
         view.addSubview(headerTitleWrapper)
         view.addSubview(doneLabel)
-        view.addSubview(nativeWrapperView)
         view.addSubview(mainTextView)
-        view.addSubview(setLanguageView)
         
         headerTitleWrapper.snp.makeConstraints {
             $0.top.equalToSuperview()
@@ -358,13 +249,9 @@ private extension AddTextViewController {
             $0.height.equalTo(35)
             $0.centerY.equalTo(headerTitleLabel.snp.centerY)
         }
-        nativeWrapperView.snp.makeConstraints {
-            $0.top.equalTo(headerTitleStick.snp.bottom).offset(15)
-            $0.leading.equalToSuperview().offset(15)
-            $0.trailing.equalToSuperview().offset(-15)
-        }
+        
         mainTextView.snp.makeConstraints {
-            $0.top.equalTo(nativeWrapperView.snp.bottom).offset(15)
+            $0.top.equalTo(headerTitleStick.snp.bottom).offset(15)
             $0.leading.equalToSuperview().offset(15)
             $0.trailing.equalToSuperview().offset(-15)
             if UIScreen.main.bounds.height < DeviceHeight.iphoneX.rawValue {
@@ -372,17 +259,6 @@ private extension AddTextViewController {
             } else {
                 $0.bottom.equalTo(view.safeAreaLayoutGuide)
             }
-        }
-        
-        setLanguageView.snp.makeConstraints {
-            $0.top.bottom.trailing.leading.equalToSuperview()
-        }
-        setLanguageViewWrapper.snp.makeConstraints {
-            $0.centerX.centerY.equalToSuperview()
-            $0.size.equalTo(280)
-        }
-        languagePickerView.snp.makeConstraints {
-            $0.centerY.centerX.equalToSuperview()
         }
     }
 }

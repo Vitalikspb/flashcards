@@ -3,7 +3,7 @@
 import UIKit
 import SnapKit
 import Then
-import FlagKit
+//import FlagKit
 
 class ChooseGroupOfCards: PopupViewController {
     
@@ -11,14 +11,6 @@ class ChooseGroupOfCards: PopupViewController {
     private lazy var headerTitleWrapper = UIView()
     private lazy var headerTitleStick = UIView()
     private lazy var headerTitleLabel = UILabel()
-    
-    
-    private lazy var setLanguageView = UIView()
-    private lazy var setLanguageViewWrapper = UIView()
-    private lazy var languagePickerView = UIPickerView()
-    private lazy var languageWrapped = UIStackView()
-    private lazy var nativeWrapperView = ChooseButton()
-    private lazy var foreignWrapperView = ChooseButton()
     private lazy var tableView = UITableView(frame: CGRect.zero, style: .insetGrouped)
     private lazy var saveButtonLabel = ActionButton()
     
@@ -35,7 +27,6 @@ class ChooseGroupOfCards: PopupViewController {
     private lazy var selectedTheme: Bool = false
     private lazy var selectedLanguage: Bool = false
     
-    private lazy var pickerData: [String] = [String]()
     private lazy var selectedFile = ""
     private lazy var selectedThemeTopic = ""
     private lazy var selectedThemeName = ""
@@ -233,27 +224,13 @@ extension ChooseGroupOfCards: UITableViewDelegate, UITableViewDataSource {
             $0.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
             $0.textColor = AppSource.Color.textColor
         }
-//        let mainImage = UIImageView()
-//        mainImage.do {
-//            $0.image = AppSource.Image.star
-//            $0.tintColor = AppSource.Color.selectedStrokeBottomButton
-//        }
-//        headerView.addSubview(mainImage)
         headerView.addSubview(nameLabel)
         nameLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(15)
-//            $0.leading.equalTo(mainImage.snp.trailing).offset(15)
             $0.trailing.equalToSuperview().inset(15)
             $0.top.equalToSuperview().offset(12)
             $0.bottom.equalToSuperview().offset(-2)
         }
-//        mainImage.snp.makeConstraints {
-//            $0.leading.equalToSuperview().inset(15)
-//            $0.centerY.equalToSuperview()
-//            $0.size.equalTo(40)
-//            $0.top.equalToSuperview().offset(12)
-//            $0.bottom.equalToSuperview().offset(-2)
-//        }
         return headerView
 
     }
@@ -388,125 +365,26 @@ extension ChooseGroupOfCards {
             return "Error"
         }
     }
-    @objc func showNativeLanguageViewTapped() {
-        selectedLanguage = true
-        setLanguageView.isHidden = false
-        firstOpenChooseLang(lang: "native", native: firstSelecterNativePicker)
-    }
-    @objc func showFofeignLanguageViewTapped() {
-        selectedLanguage = false
-        setLanguageView.isHidden = false
-        firstOpenChooseLang(lang: "foreign", native: firstSelecterForeignPicker)
-    }
-    func firstOpenChooseLang(lang: String, native selected: Bool) {
-//        guard selected == true else { return }
-        switch lang {
-        case "native":
-            nativeWrapperView.themeLabel.text =  AppSource.Text.languages.russian
-            nativeWrapperView.image = setImage(with: AppSource.Text.languages.russian)
-            selectedNativeLang = selectThemeLang(is: AppSource.Text.languages.russian)
-            languagePickerView.selectRow(0, inComponent: 0, animated: true)
-            firstSelecterNativePicker = false
-        case "foreign":
-            foreignWrapperView.themeLabel.text = AppSource.Text.languages.english
-            foreignWrapperView.image = setImage(with: AppSource.Text.languages.english)
-            selectedForeignLang = selectThemeLang(is: AppSource.Text.languages.english)
-            languagePickerView.selectRow(1, inComponent: 0, animated: true)
-            firstSelecterForeignPicker = false
-        default:
-            print("error")
-        }
-    }
-    @objc func hideLanguageViewTapped() {
-        setLanguageView.isHidden = true
-    }
 }
-
-//    MARK: - UIPickerViewDelegate, UIPickerViewDataSource
-extension ChooseGroupOfCards: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-
-        let myView = UIView(frame: CGRect(x: 0, y: 0, width: pickerView.bounds.width, height: 60))
-        let langImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        let langName  = UILabel(frame: CGRect(x: 0, y: 0, width: pickerView.bounds.width, height: 50))
-
-        langImage.image = setImage(with: pickerData[row])
-        langName.text = pickerData[row]
-        myView.addSubview(langImage)
-        myView.addSubview(langName)
-        langImage.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(75)
-            $0.centerY.equalToSuperview()
-            $0.size.equalTo(30)
-        }
-        langName.snp.makeConstraints {
-            $0.leading.equalTo(langImage.snp.trailing).offset(15)
-            $0.centerY.equalToSuperview()
-            $0.trailing.equalToSuperview()
-        }
-
-        return myView
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        switch selectedLanguage  {
-        case true:
-            nativeWrapperView.themeLabel.text = pickerData[row]
-            nativeWrapperView.image = setImage(with: pickerData[row])
-            selectedNativeLang = selectThemeLang(is: pickerData[row])
-        case false:
-            foreignWrapperView.themeLabel.text = pickerData[row]
-            foreignWrapperView.image = setImage(with: pickerData[row])
-            selectedForeignLang = selectThemeLang(is: pickerData[row])
-        }
-        if selectedForeignLang != "" && selectedNativeLang != "" && selectedTheme {
-            saveButtonLabel.setTitleColor(AppSource.Color.blueTextColor, for: .normal)
-        } else {
-            saveButtonLabel.setTitleColor(.lightGray, for: .normal)
-        }
-    }
-}
-
 
 //    MARK: - initial setup
 private extension ChooseGroupOfCards {
     
-    func setImage(with name: String) -> UIImage {
-        var countryCode = ""
-        switch name {
-        case AppSource.Text.languages.russian: countryCode = "RU"
-        case AppSource.Text.languages.english: countryCode = "US"
-        case AppSource.Text.languages.german:  countryCode = "DE"
-        case AppSource.Text.languages.french:  countryCode = "FR"
-        case AppSource.Text.languages.spanish: countryCode = "ES"
-        case AppSource.Text.languages.italy:   countryCode = "IT"
-        case AppSource.Text.languages.turkish: countryCode = "TR"
-        case AppSource.Text.languages.chine:   countryCode = "CN"
-        default: print("error")
-        }
-        let flag = Flag(countryCode: countryCode)!
-        let styledImage = flag.image(style: .circle)
-        return styledImage
+    func setupProperties() {
+        let currentCardsCollection: [CardsModel]!
+        currentCardsCollection = UserDefaults.loadFromUD()
+        selectedNativeLang = selectThemeLang(is: currentCardsCollection[0].currentNativeLang)
+        selectedForeignLang = selectThemeLang(is: currentCardsCollection[0].currentForeignLang)
     }
-    
     func setupColors() {
         view.backgroundColor = AppSource.Color.background
         tableView.backgroundColor = AppSource.Color.background
     }
-    func setupProperties() {
-        pickerData = Flags.flagArrayForChooseGroup
-    }
     
     //    MARK: - setupView
     func setupView() {
-        setupColors()
         setupProperties()
+        setupColors()
         headerTitleWrapper.do {
             $0.backgroundColor = AppSource.Color.backgroundWrapperView
             $0.addSubview(headerTitleLabel)
@@ -520,48 +398,6 @@ private extension ChooseGroupOfCards {
             $0.textColor = AppSource.Color.textColor
             $0.textAlignment = .center
             $0.font = UIFont.systemFont(ofSize: 18, weight: .regular)
-        }
-        languageWrapped.do {
-            $0.addArrangedSubview(nativeWrapperView)
-            $0.addArrangedSubview(foreignWrapperView)
-            $0.alignment = .fill
-            $0.axis = .vertical
-            $0.distribution = .fillEqually
-            $0.spacing = 10
-        }
-        nativeWrapperView.do {
-            languagePickerView.selectRow(0, inComponent: 0, animated: true)
-            $0.themeLabel.text = AppSource.Text.languages.russian
-            $0.image = setImage(with: AppSource.Text.languages.russian)
-            let tap = UITapGestureRecognizer(target: self, action: #selector(showNativeLanguageViewTapped))
-            $0.addGestureRecognizer(tap)
-        }
-        foreignWrapperView.do {
-            languagePickerView.selectRow(1, inComponent: 0, animated: true)
-            $0.themeLabel.text = AppSource.Text.languages.english
-            $0.image = setImage(with: AppSource.Text.languages.english)
-            let tap = UITapGestureRecognizer(target: self, action: #selector(showFofeignLanguageViewTapped))
-            $0.addGestureRecognizer(tap)
-        }
-        
-        setLanguageView.do {
-            $0.backgroundColor = AppSource.Color.backgroundWithAlpha
-            $0.isHidden = true
-            $0.addSubview(setLanguageViewWrapper)
-            let tap = UITapGestureRecognizer(target: self, action: #selector(hideLanguageViewTapped))
-            $0.addGestureRecognizer(tap)
-        }
-        setLanguageViewWrapper.do {
-            $0.backgroundColor = AppSource.Color.background
-            $0.layer.cornerRadius = 30
-            $0.clipsToBounds = true
-            $0.addSubview(languagePickerView)
-            $0.layer.borderWidth = 2
-            $0.layer.borderColor = AppSource.Color.background.cgColor
-        }
-        languagePickerView.do {
-            $0.delegate = self
-            $0.dataSource = self
         }
         
         tableView.do {
@@ -582,17 +418,13 @@ private extension ChooseGroupOfCards {
             $0.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
             $0.transform = .init(translationX: 0, y: 15)
         }
-        firstOpenChooseLang(lang: "native", native: firstSelecterNativePicker)
-        firstOpenChooseLang(lang: "foreign", native: firstSelecterForeignPicker)
     }
 //        MARK: - setupConstraints
     func setupConstraints() {
         
         view.addSubview(headerTitleWrapper)
-        view.addSubview(languageWrapped)
         view.addSubview(tableView)
         view.addSubview(saveButtonLabel)
-        view.addSubview(setLanguageView)
         
         headerTitleWrapper.snp.makeConstraints {
             $0.top.equalToSuperview()
@@ -610,14 +442,8 @@ private extension ChooseGroupOfCards {
             $0.trailing.equalToSuperview().offset(-15)
             $0.height.equalTo(45)
         }
-        languageWrapped.snp.makeConstraints {
-            $0.top.equalTo(headerTitleWrapper.snp.bottom).offset(15)
-            $0.leading.equalToSuperview().offset(15)
-            $0.trailing.equalToSuperview().offset(-15)
-            $0.height.equalTo(90)
-        }
         tableView.snp.makeConstraints {
-            $0.top.equalTo(languageWrapped.snp.bottom).offset(15)
+            $0.top.equalTo(headerTitleWrapper.snp.bottom).offset(15)
             $0.leading.equalToSuperview()
             $0.trailing.equalToSuperview()
             $0.bottom.equalTo(saveButtonLabel.snp.top)
@@ -628,16 +454,6 @@ private extension ChooseGroupOfCards {
             $0.leading.equalToSuperview().offset(15)
             $0.trailing.equalToSuperview().offset(-15)
             $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-25)
-        }
-        setLanguageView.snp.makeConstraints {
-            $0.top.bottom.trailing.leading.equalToSuperview()
-        }
-        setLanguageViewWrapper.snp.makeConstraints {
-            $0.centerX.centerY.equalToSuperview()
-            $0.size.equalTo(280)
-        }
-        languagePickerView.snp.makeConstraints {
-            $0.centerY.centerX.equalToSuperview()
         }
     }
 }

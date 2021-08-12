@@ -7,9 +7,6 @@ import Foundation
 
 extension UserDefaults {
     
-    // первый запуск для показа подсказок
-    static var firstLaunchPrompt: String { "firstLaunchPrompt" }
-    
     // первый запуск приложения
     static var firstLaunchApp: String { "firstLaunchApp" }
     
@@ -25,7 +22,7 @@ extension UserDefaults {
     // есть ли премиум
     static var premium: String { "premium" }
 
-    // узнать за что отвечачет и написать название
+    // сохраняет выбранный график в 7 днях обучения (слова/время обучения/ Повторения)
     static var statistic: String { "statistic" }
     
     // случайный порядок карточек в коллекции

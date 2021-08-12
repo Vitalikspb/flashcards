@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupPurchase()
         setupMigrateRealm()
-        setupFirebase()
         setupInterfaceStyle()
         setupGoogleAds()
         return true
@@ -38,12 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-}
-// MARK: -Firebase
-extension AppDelegate {
-    func setupFirebase() {
-//        FirebaseApp.configure()
-    }
 }
 // MARK: -Realm
 extension AppDelegate {

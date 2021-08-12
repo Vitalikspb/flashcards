@@ -78,11 +78,13 @@ class AddWordController: PopupViewController {
         registerKeyboardNotification()
         registerToolBar()
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let screensize: CGRect = UIScreen.main.bounds
         scrollWrapper.contentSize = CGSize(width: screensize.width, height: screensize.height-350)
     }
+    
     deinit {
         removeKeyboardNotification()
     }
@@ -358,29 +360,33 @@ private extension AddWordController {
             switch fromVC {
             case .AddCards:
                 currentCardsCollection[0].cardsCollection![matchedNewTheme].theme = selectedTheme
-                currentCardsCollection[0].cardsCollection![matchedNewTheme].info.append(contentsOf: [CollectionInfo(name: selectedName,
-                                                                                              nativeLanguage: selectedNativeLang,
-                                                                                              foreignLanguage: selectedForeignLang,
-                                                                                              dateAdded: Date(),
-                                                                                              countWords: countOfWords,
-                                                                                              fiveStarWords: 0,
-                                                                                              threeStarWords: 0,
-                                                                                              oneStarWords: 0,
-                                                                                              arrayNativeWords: tempArrayNativeWords,
-                                                                                              arrayForeignWords: tempArrayForeignWords)])
+                currentCardsCollection[0].cardsCollection![matchedNewTheme].info.append(
+                    contentsOf: [CollectionInfo(name: selectedName,
+                                                nativeLanguage: selectedNativeLang,
+                                                foreignLanguage: selectedForeignLang,
+                                                dateAdded: Date(),
+                                                countWords: countOfWords,
+                                                fiveStarWords: 0,
+                                                threeStarWords: 0,
+                                                oneStarWords: 0,
+                                                arrayNativeWords: tempArrayNativeWords,
+                                                arrayForeignWords: tempArrayForeignWords)
+                    ]
+                )
             case .CollectionCell:
                 currentCardsCollection[0].cardsCollection![matchedNewTheme].theme = selectedTheme
-                currentCardsCollection[0].cardsCollection![matchedNewTheme].info[currentIndexPath.row] =
+                currentCardsCollection[0].cardsCollection![matchedNewTheme].info[
+                    currentIndexPath.row] =
                     CollectionInfo(name: selectedName,
-                                    nativeLanguage: selectedNativeLang,
-                                    foreignLanguage: selectedForeignLang,
-                                    dateAdded: Date(),
-                                    countWords: countOfWords,
-                                    fiveStarWords: 0,
-                                    threeStarWords: 0,
-                                    oneStarWords: 0,
-                                    arrayNativeWords: tempArrayNativeWords,
-                                    arrayForeignWords: tempArrayForeignWords)
+                                   nativeLanguage: selectedNativeLang,
+                                   foreignLanguage: selectedForeignLang,
+                                   dateAdded: Date(),
+                                   countWords: countOfWords,
+                                   fiveStarWords: 0,
+                                   threeStarWords: 0,
+                                   oneStarWords: 0,
+                                   arrayNativeWords: tempArrayNativeWords,
+                                   arrayForeignWords: tempArrayForeignWords)
             case .none:
                 print("Error save new collection in theme")
             }
@@ -432,18 +438,16 @@ private extension AddWordController {
         if textViewTag == 0 {                              // 0 top textView
             vc.inputText = textViewTopView.text
             vc.fromVC = ShowTextView.top
-            vc.selectedNativeLang = selectedNativeLang
             upperTextViewTopView.backgroundColor = .clear
             upperlabelTopView.isHidden = true
         } else if textViewTag == 1 {                       // 1 bottom textView
             vc.inputText = textViewBottomView.text
             vc.fromVC = ShowTextView.bottom
-            vc.selectedNativeLang = selectedForeignLang
             upperTextViewBottomView.backgroundColor = .clear
             upperlabelBottomView.isHidden = true
         }
         
-        vc.setupTextFromNewTextView = { [weak self] (curLang, textView, curText) in
+        vc.setupTextFromNewTextView = { [weak self] (textView, curText) in
             guard let self = self else { return }
             if curText == "" {
                 self.upperTextViewTopView.backgroundColor = AppSource.Color.backgroundWrapperView
@@ -453,11 +457,9 @@ private extension AddWordController {
             } else {
                 if textView == ShowTextView.top {
                     self.textViewTopView.text = curText
-                    self.selectedNativeLang = curLang
                     self.upperFlagTopImageView.image = Flags.setImage(with: self.selectedNativeLang)
                 } else {
                     self.textViewBottomView.text = curText
-                    self.selectedForeignLang = curLang
                     self.upperFlagBottomImageView.image = Flags.setImage(with: self.selectedForeignLang)
                 }
             }
@@ -528,9 +530,7 @@ private extension AddWordController {
         setupColors()
         setupProperties()
         
-        
-        //.text = "
-        selectedTheme = "Без темы"
+        selectedTheme = AppSource.Text.ChooseLanguageVC.withoutTheme
         scrollWrapper.do {
             $0.backgroundColor = AppSource.Color.background
             $0.alwaysBounceVertical = true

@@ -38,7 +38,6 @@ class SettingViewController: UIViewController {
     private lazy var showSideCardsTitleLabel = UILabel()
     private lazy var showSideCardsSegmentedControl = UISegmentedControl(items : itemsSideCards)
 
-//    private lazy var accountWrapperView = ChooseButton()
     private lazy var speakerWrapperView = ChooseButton()
     private lazy var notificationsWrapperView = ChooseButton()
     
@@ -56,6 +55,7 @@ class SettingViewController: UIViewController {
                                   AppSource.Text.SettingVC.random]
     
     private lazy var premiumAccount: Bool = false
+    private var moduleFactory = FactoryPresent()
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -79,15 +79,12 @@ class SettingViewController: UIViewController {
         super.viewDidAppear(animated)
         setupView()
         setupConstraints()
+        
         topNameView.isHidden = false
         topNameView.animate()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.topNameView.isHidden = true
         }
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
     }
 }
 
@@ -118,36 +115,23 @@ private extension SettingViewController {
     
     
     @objc func randomOfCardsTapped(_ value: Bool) {
-        if premiumAccount {
             UserDefaults.standard.set(randomOfCardsSwitch.isOn, forKey: UserDefaults.settingRandomListCard)
-        } else {
-            randomOfCardsSwitch.isOn = false
-            showSubscriptionScreen()
-        }
     }
+    
     @objc func changeLearningViewTapped(_ value: Bool) {
-        if premiumAccount {
         UserDefaults.standard.set(changeLearningViewSwitch.isOn, forKey: UserDefaults.changeLearningView)
-        } else {
-        changeLearningViewSwitch.isOn = false
-        showSubscriptionScreen()
-        }
     }
+    
     @objc func showHintsTapped(_ value: Bool) {
         UserDefaults.standard.set(hintsSwitch.isOn, forKey: UserDefaults.showHints)
     }
+    
     @objc func automaticThemeTapped(_ value: Bool) {
-        if premiumAccount {
-        if themeModeUnSpecifiedSwitch.isOn {
-            UserDefaults.standard.set(0, forKey: UserDefaults.settingNightMode)
-            updateLayerColor(withTheme: .unspecified)
-        } else {
-            updateLayerColor(withTheme: .light)
-        }
-        } else {
-            themeModeUnSpecifiedSwitch.isOn = true
-            showSubscriptionScreen()
-        }
+            if themeModeUnSpecifiedSwitch.isOn {
+                updateLayerColor(withTheme: .unspecified)
+            } else {
+                updateLayerColor(withTheme: .light)
+            }
     }
     
 }
@@ -157,65 +141,56 @@ extension SettingViewController {
         let vc = SubscriptionViewController()
         present(vc, animated: true, completion: nil)
     }
+    
     @objc func subscriptionButtonTapped() {
         showSubscriptionScreen()
     }
+    
     @objc func showAccountViewTapped() {
-        if premiumAccount {
         let vc = AccountViewController()
         present(vc, animated: true, completion: nil)
-        } else {
-            showSubscriptionScreen()
-        }
     }
+    
     @objc func showSpeakerViewTapped() {
-        if premiumAccount {
         let vc = ChooseSpeakerViewController()
         present(vc, animated: true, completion: nil)
-        } else {
-            showSubscriptionScreen()
-        }
     }
+    
     @objc func showNotificationViewTapped() {
-        if premiumAccount {
         let vc = NotificationViewController()
         present(vc, animated: true, completion: nil)
-        }
     }
+        
     @objc func rateViewTapped() {
         let application = UIApplication.shared
         application.open(AppSource.Constants.review)
     }
+    
     @objc func shareViewTapped() {
         let ac = UIActivityViewController(
             activityItems: [AppSource.Constants.appURL],
             applicationActivities: nil)
         present(ac, animated: true)
     }
+    
     @objc func connectViewTapped() {
         let application = UIApplication.shared
         application.open(AppSource.Constants.support)    
     }
+    
     @objc func sideCardsChanged(_ sender: UISegmentedControl) {
-        if premiumAccount {
         switch sender.selectedSegmentIndex {
         case 0: UserDefaults.standard.set(0, forKey: UserDefaults.settingCardView)
         case 1: UserDefaults.standard.set(1, forKey: UserDefaults.settingCardView)
         case 2: UserDefaults.standard.set(2, forKey: UserDefaults.settingCardView)
         default: break
         }
-    } else {
-        sender.selectedSegmentIndex = 0
-        showSubscriptionScreen()
-    }
     }
     
     @objc func themeColorLightTapped() {
-        UserDefaults.standard.set(1, forKey: UserDefaults.settingNightMode)
         updateLayerColor(withTheme: .light)
     }
     @objc func themeColorDarkTapped() {
-        UserDefaults.standard.set(2, forKey: UserDefaults.settingNightMode)
         updateLayerColor(withTheme: .dark)
     }
     
@@ -243,6 +218,7 @@ extension SettingViewController {
             themeModeLightLabel.isHidden = false
             stickView7.isHidden = false
             themeModeDarkLabel.isHidden = false
+            
         case .dark:
             UserDefaults.standard.set(2, forKey: UserDefaults.settingNightMode)
             UIApplication.shared.windows.forEach { window in
@@ -265,6 +241,7 @@ extension SettingViewController {
             themeModeLightLabel.isHidden = false
             stickView7.isHidden = false
             themeModeDarkLabel.isHidden = false
+            
         case .unspecified:
             UserDefaults.standard.set(0, forKey: UserDefaults.settingNightMode)
             UIApplication.shared.windows.forEach { window in
@@ -287,43 +264,31 @@ extension SettingViewController {
                 $0.leading.trailing.equalToSuperview().inset(15)
                 $0.height.equalTo(192)
             }
-            
-            
-            
         }
-        
     }
 }
 
 private extension SettingViewController {
+    
     func setupColors() {
         view.backgroundColor = AppSource.Color.background
         buttonWrapper.backgroundColor = AppSource.Color.backgroundBottonView
     }
     
     func setupProperties() {
-        
         premiumAccount = UserDefaults.standard.bool(forKey: UserDefaults.premium)
 
         buttonsView.presentCardsVC = { [weak self] in
-            guard let self = self else { return }
-            let vc = CardsViewController()
-            self.present(vc, animated: true, completion: nil)
+            self?.moduleFactory.switchToSecond(toModule: .cards)
         }
         buttonsView.presentStatisticsVC = { [weak self] in
-            guard let self = self else { return }
-            let vc = StatisticsViewController()
-            self.present(vc, animated: true, completion: nil)
+            self?.moduleFactory.switchToSecond(toModule: .statistics)
         }
         buttonsView.presentSettingVC = { [weak self] in
-            guard let self = self else { return }
-            let vc = SettingViewController()
-            self.present(vc, animated: true, completion: nil)
+            self?.moduleFactory.switchToSecond(toModule: .settings)
         }
         buttonsView.presentLearnVC = { [weak self] in
-            guard let self = self else { return }
-            let vc = EducationViewController()
-            self.present(vc, animated: true, completion: nil)
+            self?.moduleFactory.switchToSecond(toModule: .education)
         }
     }
     
@@ -341,6 +306,7 @@ private extension SettingViewController {
             $0.isHidden = true
             $0.showNameView(AppSource.Text.SettingVC.settings, andImage: AppSource.Image.slider!)
         }
+        
         topLabelSwitchWrapper.do {
             $0.backgroundColor = AppSource.Color.backgroundWrapperView
             $0.layer.cornerRadius = 10
@@ -369,22 +335,24 @@ private extension SettingViewController {
             $0.textAlignment = .left
             $0.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         }
+        
         randomOfCardsSwitch.do {
             $0.addTarget(self, action: #selector(randomOfCardsTapped), for: .valueChanged)
         }
+        
         [stickView1, stickView2, stickView3, stickView6, stickView7].forEach{
             $0.do {
                 $0.backgroundColor = AppSource.Color.titleStick
             }
         }
-        
-        
+
         changeLearningViewLabel.do {
             $0.text = AppSource.Text.SettingVC.testOrCards
             $0.textColor = AppSource.Color.textColor
             $0.textAlignment = .left
             $0.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         }
+        
         changeLearningViewSwitch.do {
             $0.addTarget(self, action: #selector(changeLearningViewTapped), for: .valueChanged)
         }
@@ -405,7 +373,6 @@ private extension SettingViewController {
             $0.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         }
         showSideCardsSegmentedControl.do {
-            $0.selectedSegmentIndex = 0
             $0.addTarget(self, action: #selector(sideCardsChanged(_:)), for: .valueChanged)
             $0.backgroundColor = AppSource.Color.backgroundBottonView
             $0.selectedSegmentTintColor = AppSource.Color.backgroundWrapperView
@@ -417,7 +384,6 @@ private extension SettingViewController {
             $0.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         }
         themeModeUnSpecifiedSwitch.do {
-            $0.isOn = true
             $0.addTarget(self, action: #selector(automaticThemeTapped(_:)), for: .valueChanged)
         }
         themeModeLightLabel.do {
@@ -428,18 +394,10 @@ private extension SettingViewController {
             $0.isUserInteractionEnabled = true
             let tap = UITapGestureRecognizer(target: self, action: #selector(themeColorLightTapped))
             $0.addGestureRecognizer(tap)
-            $0.isHidden = true
         }
         themeModeLightImage.do {
             $0.image = AppSource.Image.checkmark
             $0.contentMode = .scaleAspectFit
-            $0.isHidden = true
-        }
-        stickView6.do {
-            $0.isHidden = true
-        }
-        stickView7.do {
-            $0.isHidden = true
         }
         themeModeDarkLabel.do {
             $0.text = AppSource.Text.SettingVC.dark
@@ -449,19 +407,11 @@ private extension SettingViewController {
             $0.isUserInteractionEnabled = true
             let tap = UITapGestureRecognizer(target: self, action: #selector(themeColorDarkTapped))
             $0.addGestureRecognizer(tap)
-            $0.isHidden = true
         }
         themeModeDarkImage.do {
             $0.image = AppSource.Image.checkmark
             $0.contentMode = .scaleAspectFit
-            $0.isHidden = true
         }
-//        accountWrapperView.do {
-//            $0.themeLabel.text = AppSource.Text.SettingVC.account
-//            $0.image = AppSource.Image.account
-//            let tap = UITapGestureRecognizer(target: self, action: #selector(showAccountViewTapped))
-//            $0.addGestureRecognizer(tap)
-//        }
         speakerWrapperView.do {
             $0.themeLabel.text = AppSource.Text.SettingVC.voice
             $0.image = AppSource.Image.voice
@@ -538,7 +488,6 @@ private extension SettingViewController {
         scrollWrapper.addSubview(topLabelSwitchWrapper)
         scrollWrapper.addSubview(showSideCardsTitleLabel)
         scrollWrapper.addSubview(showSideCardsSegmentedControl)
-//        scrollWrapper.addSubview(accountWrapperView)
         scrollWrapper.addSubview(speakerWrapperView)
         scrollWrapper.addSubview(notificationsWrapperView)
         scrollWrapper.addSubview(subscriptionWrapper)
@@ -561,7 +510,12 @@ private extension SettingViewController {
         topLabelSwitchWrapper.snp.remakeConstraints {
             $0.top.equalToSuperview().offset(15)
             $0.leading.trailing.equalToSuperview().inset(15)
-            $0.height.equalTo(192)
+            switch UserDefaults.standard.integer(forKey: UserDefaults.settingNightMode) {
+            case 1,2: $0.height.equalTo(274)
+            case 0: $0.height.equalTo(192)
+            default: print("error")
+            }
+            
         }
         
         randomOfCardsLabel.snp.makeConstraints {
@@ -661,15 +615,7 @@ private extension SettingViewController {
             $0.top.equalTo(themeModeLightImage.snp.bottom).offset(15)
             $0.trailing.equalToSuperview().offset(-15)
         }
-        
-//        accountWrapperView.snp.makeConstraints {
-//            $0.top.equalTo(showSideCardsSegmentedControl.snp.bottom).offset(30)
-//            $0.leading.equalToSuperview().offset(15)
-//            $0.trailing.equalToSuperview().offset(-15)
-//            $0.height.equalTo(45)
-//        }
         speakerWrapperView.snp.makeConstraints {
-//            $0.top.equalTo(accountWrapperView.snp.bottom).offset(15)
             $0.top.equalTo(showSideCardsSegmentedControl.snp.bottom).offset(30)
             $0.leading.equalToSuperview().offset(15)
             $0.trailing.equalToSuperview().offset(-15)

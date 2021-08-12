@@ -544,7 +544,6 @@
 "TypeOfCardsTheme.peopleTheme" = "Gens";
 // животные
 "TypeOfCardsTheme.animalTheme" = "Animaux";
-}
 
 
 
@@ -578,3 +577,15 @@
 "AccountVC.registerSuccess" = "Enregistré avec succès!";
 // Карточки сохраняются в облаке и будут загружаться с других ваших устройств на этом аккаунте
 "AccountVC.messageSuccess" = "Les cartes sont enregistrées dans le cloud et seront téléchargées à partir de vos autres appareils sur ce compte";
+
+
+
+//  MARK: - ChooseLanguageVC
+// Без темы (добавлена совя коллекция без темы)
+"ChooseLanguageVC.withoutTheme" = "Pas de sujet";
+// Для начала использования необходимо выбрать языки
+"ChooseLanguageVC.helloLabel" = "Pour commencer à utiliser, vous devez sélectionner les langues";
+// Родной язык
+"ChooseLanguageVC.nativeLanguage" = "Langue maternelle";
+// Иностранный язык
+"ChooseLanguageVC.foreignLanguage" = "Une langue étrangère";

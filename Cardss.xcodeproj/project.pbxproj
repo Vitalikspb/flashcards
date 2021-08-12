@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5315464D26C296E2006059EC /* ChooseLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5315464C26C296E2006059EC /* ChooseLanguage.swift */; };
 		5321B8C726BD671A00267E97 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5321B8C626BD671A00267E97 /* Realm */; };
 		5321B8C926BD671A00267E97 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5321B8C826BD671A00267E97 /* RealmSwift */; };
+		53CB8FB326C53D23004A01C2 /* FactoryPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB8FB226C53D23004A01C2 /* FactoryPresent.swift */; };
 		FA019CEF26028830004E03E1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA019CEE26028830004E03E1 /* AVFoundation.framework */; };
 		FA02D0E625E6C991007FE829 /* Родственники1Английский.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA02D0E425E6C991007FE829 /* Родственники1Английский.txt */; };
 		FA02D0E725E6C991007FE829 /* Родственники1Русский.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA02D0E525E6C991007FE829 /* Родственники1Русский.txt */; };
@@ -650,6 +652,8 @@
 
 /* Begin PBXFileReference section */
 		141CA8B9DC52AD4D112C1B50 /* Pods-Cardss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cardss.release.xcconfig"; path = "Target Support Files/Pods-Cardss/Pods-Cardss.release.xcconfig"; sourceTree = "<group>"; };
+		5315464C26C296E2006059EC /* ChooseLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguage.swift; sourceTree = "<group>"; };
+		53CB8FB226C53D23004A01C2 /* FactoryPresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryPresent.swift; sourceTree = "<group>"; };
 		6A1026E1D46A72FE7CFA375F /* Pods-Cardss.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cardss.debug.xcconfig"; path = "Target Support Files/Pods-Cardss/Pods-Cardss.debug.xcconfig"; sourceTree = "<group>"; };
 		B809A4BA324E57EDB8635447 /* Pods_Cardss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cardss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA019CEE26028830004E03E1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -1312,6 +1316,22 @@
 				B809A4BA324E57EDB8635447 /* Pods_Cardss.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5315464B26C296B3006059EC /* ChooseLanguageVC */ = {
+			isa = PBXGroup;
+			children = (
+				5315464C26C296E2006059EC /* ChooseLanguage.swift */,
+			);
+			path = ChooseLanguageVC;
+			sourceTree = "<group>";
+		};
+		53CB8FB126C53D0E004A01C2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				53CB8FB226C53D23004A01C2 /* FactoryPresent.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		DF98805698F4EE09715C5D89 /* Pods */ = {
@@ -2036,6 +2056,7 @@
 		FA3DE04125928F2E0083CF5A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5315464B26C296B3006059EC /* ChooseLanguageVC */,
 				FAFC873026261847009EC9C3 /* AccountVC */,
 				FA4714BB25DE488400BD9A40 /* ChooseGroupOfCards */,
 				FA47FEC625A0FC5300857AB4 /* AddWordsVC */,
@@ -2437,6 +2458,7 @@
 		FAFA1765259B2B7300CB3E32 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				53CB8FB126C53D0E004A01C2 /* Presenter */,
 				FA96A92025D6BEA800C2FD7B /* Extension */,
 				FAABA28425B80E96003EEC07 /* Controller */,
 				FA3DE04D259290A10083CF5A /* UIElements */,
@@ -3209,6 +3231,7 @@
 				FAFA176E259B32B700CB3E32 /* CardsModel.swift in Sources */,
 				FAA9605F26457F0F00A06BA0 /* AnimateControl.swift in Sources */,
 				FAFC873226261853009EC9C3 /* AccountViewController.swift in Sources */,
+				53CB8FB326C53D23004A01C2 /* FactoryPresent.swift in Sources */,
 				FA24A2BD263DD8C200821E06 /* EndEducationNotificationView.swift in Sources */,
 				FA8BF498260364AE00BDCA08 /* SpeakerTableViewCell.swift in Sources */,
 				FAFA1767259B2B9B00CB3E32 /* UIColorExtension.swift in Sources */,
@@ -3246,6 +3269,7 @@
 				FAA9605226457DDA00A06BA0 /* FeatureHorizontalView.swift in Sources */,
 				FA85A8A52638075800E6DCC2 /* FirestoreService.swift in Sources */,
 				FAC13E2625E92AAC00B52B5A /* AlertView.swift in Sources */,
+				5315464D26C296E2006059EC /* ChooseLanguage.swift in Sources */,
 				FA197ADF25EFE7B50038501B /* AddTextViewController.swift in Sources */,
 				FA3DE05C259298BC0083CF5A /* BottomButtonType.swift in Sources */,
 				FA7D9AE125D3BD620050066D /* LocalNotificationManager.swift in Sources */,

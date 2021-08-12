@@ -542,13 +542,8 @@ extension AppSource.Text {
         static var animalTheme: String { (TypeOfCardsTheme.domain + "animalTheme").localized()  }
     }
     
-    
-    
-    
-    
-    
-    
     // - MARK: AccountVC
+    
     enum AccountVC {
         private static var domain = "AccountVC."
         // Сбросить пароль?
@@ -577,5 +572,21 @@ extension AppSource.Text {
         static var registerSuccess: String { (AccountVC.domain + "registerSuccess").localized()  }
         // successMessage
         static var messageSuccess: String { (AccountVC.domain + "messageSuccess").localized()  }
+    }
+    
+    
+    
+    // - MARK: ChooseLanguage
+    
+    enum ChooseLanguageVC {
+        private static var domain = "ChooseLanguageVC."
+        // Без темы (добавлена совя коллекция без темы)
+        static var withoutTheme: String { (ChooseLanguageVC.domain + "withoutTheme").localized()  }
+        // Для начала использования необходимо выбрать языки
+        static var helloLabel: String { (ChooseLanguageVC.domain + "helloLabel").localized()  }
+        // Родной язык
+        static var nativeLanguage: String { (ChooseLanguageVC.domain + "nativeLanguage").localized()  }
+        // Иностранный язык
+        static var foreignLanguage: String { (ChooseLanguageVC.domain + "foreignLanguage").localized()  }
     }
 }

@@ -83,6 +83,7 @@ class EducationViewController: UIViewController, AVSpeechSynthesizerDelegate {
     var indexPathOfCollection: IndexPath? // для сохранения по текущему индексу колекции всех обновленных параметров
     
     private var interstitial: GADInterstitialAd?
+    private var moduleFactory = FactoryPresent()
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -173,27 +174,27 @@ extension EducationViewController: GADFullScreenContentDelegate {
 private extension EducationViewController {
     
     func setupUserDefaultSettings() {
+        let userDefault = UserDefaults.standard
+        premiumAccount = userDefault.bool(forKey: UserDefaults.premium)  ? true : false
+        selectedSpeaker = userDefault.string(forKey: UserDefaults.selectedSpeaker) ?? "Milena"
+        randomOfCardsSwitch = userDefault.bool(forKey: UserDefaults.settingRandomListCard) ? true : false
+        showTestView = userDefault.bool(forKey: UserDefaults.changeLearningView) ? true : false
         
-        premiumAccount = UserDefaults.standard.bool(forKey: UserDefaults.premium)  ? true : false
-        selectedSpeaker = UserDefaults.standard.string(forKey: UserDefaults.selectedSpeaker) ?? "Milena"
-        randomOfCardsSwitch = UserDefaults.standard.bool(forKey: UserDefaults.settingRandomListCard) ? true : false
-        showTestView = UserDefaults.standard.bool(forKey: UserDefaults.changeLearningView) ? true : false
-        
-        if !UserDefaults.standard.bool(forKey: UserDefaults.firstLaunchPrompt) {
-            UserDefaults.standard.set(true, forKey: UserDefaults.firstLaunchPrompt)
+        if !userDefault.bool(forKey: UserDefaults.firstLaunchApp) {
+            userDefault.set(true, forKey: UserDefaults.firstLaunchApp)
             firstLaunch = true
         } else {
             firstLaunch = false
         }
         
-        switch UserDefaults.standard.integer(forKey: UserDefaults.settingCardView) {
+        switch userDefault.integer(forKey: UserDefaults.settingCardView) {
         case 0: whichSideCardToLearn = 0
         case 1: whichSideCardToLearn = 1
         case 2: whichSideCardToLearn = 2
         default: print("error")
         }
         
-        switch UserDefaults.standard.integer(forKey: UserDefaults.settingNightMode) {
+        switch userDefault.integer(forKey: UserDefaults.settingNightMode) {
         case 0:
             UIApplication.shared.windows.forEach { window in
                 window.overrideUserInterfaceStyle = .unspecified }
@@ -799,26 +800,22 @@ extension EducationViewController {
         buttonsView.presentCardsVC = { [weak self] in
             guard let self = self else { return }
             self.timer.invalidate()
-            let vc = CardsViewController()
-            self.present(vc, animated: true, completion: nil)
+            self.moduleFactory.switchToSecond(toModule: .cards)
         }
         buttonsView.presentStatisticsVC = { [weak self] in
             guard let self = self else { return }
             self.timer.invalidate()
-            let vc = StatisticsViewController()
-            self.present(vc, animated: true, completion: nil)
+            self.moduleFactory.switchToSecond(toModule: .statistics)
         }
         buttonsView.presentSettingVC = { [weak self] in
             guard let self = self else { return }
             self.timer.invalidate()
-            let vc = SettingViewController()
-            self.present(vc, animated: true, completion: nil)
+            self.moduleFactory.switchToSecond(toModule: .settings)
         }
         buttonsView.presentLearnVC = { [weak self] in
             guard let self = self else { return }
             self.timer.invalidate()
-            let vc = EducationViewController()
-            self.present(vc, animated: true, completion: nil)
+            self.moduleFactory.switchToSecond(toModule: .education)
         }
         
         topNameView.do {

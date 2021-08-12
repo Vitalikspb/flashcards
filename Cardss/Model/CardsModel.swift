@@ -12,6 +12,8 @@ struct CardsModel: Codable {
                                    countThreeStar: 0,
                                    countOneStar: 0,
                                    repeatsCount: 0,
+                                   currentNativeLang: "",
+                                   currentForeignLang: "",
                                    countLeaningWordsSevenDays: [WeekDayCounter.returnDateOfDate()[0]:0,
                                                                 WeekDayCounter.returnDateOfDate()[1]:0,
                                                                 WeekDayCounter.returnDateOfDate()[2]:0,
@@ -41,6 +43,8 @@ struct CardsModel: Codable {
     var countThreeStar: Int
     var countOneStar: Int
     var repeatsCount: Int
+    var currentNativeLang: String
+    var currentForeignLang: String
     var countLeaningWordsSevenDays: [Date: Int]
     var educationTimeSevenDays: [Date: Int]
     var repeatsCountSevenDays: [Date: Int]
