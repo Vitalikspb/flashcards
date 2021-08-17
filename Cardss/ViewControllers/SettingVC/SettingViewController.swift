@@ -284,9 +284,6 @@ private extension SettingViewController {
         buttonsView.presentStatisticsVC = { [weak self] in
             self?.moduleFactory.switchToSecond(toModule: .statistics)
         }
-        buttonsView.presentSettingVC = { [weak self] in
-            self?.moduleFactory.switchToSecond(toModule: .settings)
-        }
         buttonsView.presentLearnVC = { [weak self] in
             self?.moduleFactory.switchToSecond(toModule: .education)
         }

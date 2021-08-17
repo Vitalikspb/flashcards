@@ -34,6 +34,7 @@ class ChooseLanguage: PopupViewController {
     private lazy var selectedForeignLang = ""
     private lazy var selectedLanguage: Bool = true
     private var currentCardsCollection: [CardsModel]!
+    private var moduleFactory = FactoryPresent()
     
     
 //    MARK: - life cycle
@@ -48,9 +49,8 @@ class ChooseLanguage: PopupViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if UserDefaults.standard.bool(forKey: UserDefaults.firstLaunchApp) {
-            DispatchQueue.main.async {
-                let vc = CardsViewController()
-                self.present(vc, animated: true, completion: nil)
+            DispatchQueue.main.async { [weak self] in
+                self?.moduleFactory.switchToSecond(toModule: .cards)
             }
         } else {
             setupView()
@@ -134,9 +134,7 @@ extension ChooseLanguage {
             ]
             UserDefaults.saveToUD(currentCardsCollection)
         }
-        
-        let vc = CardsViewController()
-        present(vc, animated: true, completion: nil)
+        moduleFactory.switchToSecond(toModule: .cards)
     }
 }
 

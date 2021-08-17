@@ -812,11 +812,6 @@ extension EducationViewController {
             self.timer.invalidate()
             self.moduleFactory.switchToSecond(toModule: .settings)
         }
-        buttonsView.presentLearnVC = { [weak self] in
-            guard let self = self else { return }
-            self.timer.invalidate()
-            self.moduleFactory.switchToSecond(toModule: .education)
-        }
         
         topNameView.do {
             $0.isHidden = true

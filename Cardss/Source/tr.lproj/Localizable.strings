@@ -168,7 +168,8 @@
 "StatisticsVC.repeats" = "Tekrarlama";
 // слов
 "StatisticsVC.word" = "kelime";
-
+// Нет статистики
+"StatisticsVC.noStatistics" = "Istatistik yok";
 
 
 

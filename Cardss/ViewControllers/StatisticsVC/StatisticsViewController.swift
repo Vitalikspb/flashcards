@@ -92,9 +92,17 @@ class StatisticsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
-        setupConstraints()
-        setupUserDefaultSettings()
+        setupProperties()
+        if repeatsCount != 0 && educationTime != 0 {
+            setupView()
+            setupConstraints()
+            setupUserDefaultSettings()
+            setupUserDefaultThemesMode()
+        } else {
+            configurationUIWithoutEducation()
+            configurationConstraintsWithoutEducation()
+            setupUserDefaultThemesMode()
+        }
         buttonsView.statisticsButtom.layer.borderColor = AppSource.Color.selectedStrokeBottomButton.cgColor
         buttonsView.statisticImage.tintColor = AppSource.Color.selectedStrokeBottomButton
     }
@@ -160,10 +168,10 @@ extension StatisticsViewController: ChartViewDelegate {
         let set = PieChartDataSet(entries: entries)
         set.colors = ChartColorTemplates.pastel()
         set.label = ""
-        set.valueColors = [.clear]//[AppSource.Color.textColor]
-        set.valueLineColor = .clear//[AppSource.Color.textColor]
+        set.valueColors = [.clear]
+        set.valueLineColor = .clear
         set.entryLabelColor = AppSource.Color.textColor
-        set.valueTextColor = .clear//[AppSource.Color.textColor]
+        set.valueTextColor = .clear
         set.valueFont = UIFont.systemFont(ofSize: 14, weight: .regular)
         
         pieChartsView.legend.enabled = false
@@ -229,10 +237,10 @@ extension StatisticsViewController: ChartViewDelegate {
         let set = PieChartDataSet(entries: entries)
         set.colors = ChartColorTemplates.pastel()
         set.label = ""
-        set.valueColors = [.clear]//[AppSource.Color.textColor]
-        set.valueLineColor = .clear//[AppSource.Color.textColor]
+        set.valueColors = [.clear]
+        set.valueLineColor = .clear
         set.entryLabelColor = AppSource.Color.textColor
-        set.valueTextColor = .clear//[AppSource.Color.textColor]
+        set.valueTextColor = .clear
         set.valueFont = UIFont.systemFont(ofSize: 14, weight: .regular)
         
         pieChartSevenDayView.drawHoleEnabled = false
@@ -363,6 +371,11 @@ private extension StatisticsViewController {
             changeLayoutBottomTopXAxisView(chart: ChartsView.repeatCount)
         default: print("error")
         }
+        
+        
+    }
+    
+    func setupUserDefaultThemesMode() {
         switch UserDefaults.standard.integer(forKey: UserDefaults.settingNightMode) {
         case 0:
             UIApplication.shared.windows.forEach { window in
@@ -593,6 +606,7 @@ extension StatisticsViewController {
         
         let newData2 = dataCards.repeatsCountSevenDays.sorted { $0 > $1 }
         var dateDiff2: Int
+        
         for (_, value) in newData2.enumerated() {
             dateDiff2 = Calendar.current.dateComponents([.day],
                                                         from: value.key,
@@ -732,13 +746,8 @@ extension StatisticsViewController {
             arrayOfWeekDay[arrayOfIndex].text = nameOfWeekDay[indexWeekDay]
         }
     }
-    
-    private func setupView() {
+    func configurationUIWithoutEducation() {
         setupColors()
-        setupProperties()
-        setupPieChart()
-        setupPieChartSevenDay()
-        setupLineChart()
         
         scrollWrapper.do {
             $0.backgroundColor = .clear
@@ -756,9 +765,6 @@ extension StatisticsViewController {
         buttonsView.presentCardsVC = { [weak self] in
             self?.moduleFactory.switchToSecond(toModule: .cards)
         }
-        buttonsView.presentStatisticsVC = { [weak self] in
-            self?.moduleFactory.switchToSecond(toModule: .statistics)
-        }
         buttonsView.presentSettingVC = { [weak self] in
             self?.moduleFactory.switchToSecond(toModule: .settings)
         }
@@ -770,6 +776,62 @@ extension StatisticsViewController {
             $0.isHidden = true
             $0.showNameView(AppSource.Text.StatisticsVC.statistic, andImage: AppSource.Image.waveform!)
         }
+        titlePieLabel.do {
+            $0.text = educationTime == 0 ? AppSource.Text.StatisticsVC.noStatistics : AppSource.Text.Shared.allTimeEducation
+            $0.textColor = AppSource.Color.textColor
+            $0.textAlignment = .center
+            $0.font = UIFont.systemFont(ofSize: 22, weight: .medium)
+        }
+        buttonWrapper.do {
+            $0.layer.cornerRadius = 30
+            $0.layer.masksToBounds = true
+        }
+    }
+    
+    
+    func configurationConstraintsWithoutEducation() {
+
+        view.addSubview(buttonWrapper)
+        if educationTime == 0 {
+            view.addSubview(titlePieLabel)
+        }
+        buttonWrapper.addSubview(buttonsView)
+        view.addSubview(topNameView)
+        
+        commonSetupConstraints()
+        
+        titlePieLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(55)
+            $0.center.equalToSuperview()
+        }
+        
+    }
+    
+    func commonSetupConstraints() {
+        topNameView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(90)
+        }
+        buttonWrapper.snp.makeConstraints {
+            $0.leading.trailing.bottom.equalToSuperview()
+            let sizeHeight = UIScreen.main.bounds.height <= DeviceHeight.iphoneSE.rawValue ? 80 : 100
+            $0.height.equalTo(sizeHeight)
+        }
+        buttonsView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(16)
+            $0.bottom.equalToSuperview().offset(-15)
+            $0.leading.trailing.equalToSuperview().inset(25)
+        }
+    }
+    
+    private func setupView() {
+        setupPieChart()
+        setupPieChartSevenDay()
+        setupLineChart()
+        
+        configurationUIWithoutEducation()
+        
         pieChartWrapper.do {
             $0.addSubview(pieChartsView)
             $0.addSubview(titlePieLabel)
@@ -778,12 +840,6 @@ extension StatisticsViewController {
         pieChartsView.do {
             $0.delegate = self
             $0.center = view.center
-        }
-        titlePieLabel.do {
-            $0.text = AppSource.Text.Shared.allTimeEducation
-            $0.textColor = AppSource.Color.textColor
-            $0.textAlignment = .center
-            $0.font = UIFont.systemFont(ofSize: 22, weight: .medium)
         }
         
         starView.do {
@@ -917,10 +973,6 @@ extension StatisticsViewController {
             $0.textColor = AppSource.Color.textColor
             $0.textAlignment = .center
          }
-        buttonWrapper.do {
-            $0.layer.cornerRadius = 30
-            $0.layer.masksToBounds = true
-        }
     }
     private func setupConstraints() {
         view.addSubview(scrollWrapper)
@@ -931,6 +983,9 @@ extension StatisticsViewController {
         
         buttonWrapper.addSubview(buttonsView)
         view.addSubview(topNameView)
+        
+        commonSetupConstraints()
+        
         scrollWrapper.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(buttonWrapper.snp.top)
@@ -940,13 +995,6 @@ extension StatisticsViewController {
             $0.top.leading.trailing.equalToSuperview().inset(15)
             $0.height.equalTo(420)
             $0.bottom.equalTo(bottomWrapper.snp.top).offset(-15)
-        }
-        
-        
-        topNameView.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(90)
         }
         titlePieLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(-17)
@@ -1091,16 +1139,6 @@ extension StatisticsViewController {
             $0.trailing.equalTo(barChartsView.snp.trailing).offset(-20)
             $0.bottom.equalTo(barChartsView.snp.bottom).offset(-19)
             $0.height.equalTo(35)
-        }
-        buttonWrapper.snp.makeConstraints {
-            $0.leading.trailing.bottom.equalToSuperview()
-            let sizeHeight = UIScreen.main.bounds.height <= DeviceHeight.iphoneSE.rawValue ? 80 : 100
-            $0.height.equalTo(sizeHeight)
-        }
-        buttonsView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(16)
-            $0.bottom.equalToSuperview().offset(-15)
-            $0.leading.trailing.equalToSuperview().inset(25)
         }
     }
 }

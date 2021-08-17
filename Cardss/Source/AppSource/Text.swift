@@ -171,6 +171,8 @@ extension AppSource.Text {
         static var repeats: String { (StatisticsVC.domain + "repeats").localized()  }
         // слов
         static var word: String { (StatisticsVC.domain + "word").localized()  }
+        // no statistics
+        static var  noStatistics: String { (StatisticsVC.domain + "noStatistics").localized()  }
     }
     // - MARK: SettingVC
     enum SettingVC {

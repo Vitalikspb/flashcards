@@ -168,7 +168,8 @@
 "StatisticsVC.repeats" = "Répétitions";
 // слов
 "StatisticsVC.word" = "Mots";
-
+// Нет статистики
+"StatisticsVC.noStatistics" = "Pas de statistiques";
 
 
 

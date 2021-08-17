@@ -258,9 +258,6 @@ extension CardsViewController {
         setupColors()
         setupProperties()
 
-        buttonsView.presentCardsVC = { [weak self] in
-            self?.moduleFactory.switchToSecond(toModule: .cards)
-        }
         buttonsView.presentStatisticsVC = { [weak self] in
             self?.moduleFactory.switchToSecond(toModule: .statistics)
         }
