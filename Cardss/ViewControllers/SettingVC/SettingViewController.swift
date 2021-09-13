@@ -13,6 +13,8 @@ enum ThemeColor {
 
 class SettingViewController: UIViewController {
     
+    // MARK: - UI Properties
+    
     private lazy var topNameView = NameOfViewController()
     private lazy var scrollWrapper = VerticalScrollView()
     
@@ -54,8 +56,13 @@ class SettingViewController: UIViewController {
                                   AppSource.Text.SettingVC.right,
                                   AppSource.Text.SettingVC.random]
     
+    // MARK: - Properties
+    
     private lazy var premiumAccount: Bool = false
+    private lazy var speakerName: String = ""
     private var moduleFactory = FactoryPresent()
+    
+    // MARK: - Life cycle
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -88,6 +95,8 @@ class SettingViewController: UIViewController {
     }
 }
 
+// MARK: - Helper Functions
+
 private extension SettingViewController {
     
     func setupUserDefaultSettings() {
@@ -96,6 +105,8 @@ private extension SettingViewController {
         randomOfCardsSwitch.isOn = userDefault.bool(forKey: UserDefaults.settingRandomListCard)
         changeLearningViewSwitch.isOn = userDefault.bool(forKey: UserDefaults.changeLearningView)
         hintsSwitch.isOn = userDefault.bool(forKey: UserDefaults.showHints)
+        let tempNameSpeaker = UserDefaults.standard.string(forKey: UserDefaults.selectedSpeaker) ?? "ru-RU"
+        self.speakerName = Speaker.selectCountry(by: tempNameSpeaker)
         
         switch userDefault.integer(forKey: UserDefaults.settingCardView) {
         case 0: showSideCardsSegmentedControl.selectedSegmentIndex = 0
@@ -113,6 +124,7 @@ private extension SettingViewController {
         
     }
     
+    // MARK: - Selectors
     
     @objc func randomOfCardsTapped(_ value: Bool) {
             UserDefaults.standard.set(randomOfCardsSwitch.isOn, forKey: UserDefaults.settingRandomListCard)
@@ -153,6 +165,12 @@ extension SettingViewController {
     
     @objc func showSpeakerViewTapped() {
         let vc = ChooseSpeakerViewController()
+        vc.updateSpeaker = { [weak self] in
+            guard let self = self else { return }
+            let tempNameSpeaker = UserDefaults.standard.string(forKey: UserDefaults.selectedSpeaker) ?? "ru-RU"
+            self.speakerName = Speaker.selectCountry(by: tempNameSpeaker)
+            self.speakerWrapperView.themeLabel.text = "\(AppSource.Text.SettingVC.voice) - \(self.speakerName)"
+        }
         present(vc, animated: true, completion: nil)
     }
     
@@ -277,7 +295,8 @@ private extension SettingViewController {
     
     func setupProperties() {
         premiumAccount = UserDefaults.standard.bool(forKey: UserDefaults.premium)
-
+        
+        
         buttonsView.presentCardsVC = { [weak self] in
             self?.moduleFactory.switchToSecond(toModule: .cards)
         }
@@ -410,7 +429,7 @@ private extension SettingViewController {
             $0.contentMode = .scaleAspectFit
         }
         speakerWrapperView.do {
-            $0.themeLabel.text = AppSource.Text.SettingVC.voice
+            $0.themeLabel.text = "\(AppSource.Text.SettingVC.voice) - \(speakerName)"
             $0.image = AppSource.Image.voice
             let tap = UITapGestureRecognizer(target: self, action: #selector(showSpeakerViewTapped))
             $0.addGestureRecognizer(tap)

@@ -21,6 +21,8 @@ class ChooseSpeakerViewController: PopupViewController {
         super.init()
     }
     
+    var updateSpeaker: (() -> Void)?
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -40,6 +42,7 @@ class ChooseSpeakerViewController: PopupViewController {
 
 private extension ChooseSpeakerViewController {
     @objc func doneLabelTapped() {
+        updateSpeaker?()
         dismiss(animated: true, completion: nil)
     }
     func setupUserDefaultSettings() {
@@ -49,9 +52,11 @@ private extension ChooseSpeakerViewController {
 }
 
 extension ChooseSpeakerViewController: UITableViewDelegate, UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listOfSpeaker.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SpeakerTableViewCell.reuseId, for: indexPath) as! SpeakerTableViewCell        
         let name = Speaker.selectName(by: listOfSpeaker[indexPath.row])
@@ -70,6 +75,7 @@ extension ChooseSpeakerViewController: UITableViewDelegate, UITableViewDataSourc
         cell.nameLabel.text = listOfSpeaker[indexPath.row]        
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let cell = tableView.cellForRow(at: oldIndexPath) as? SpeakerTableViewCell {
@@ -88,6 +94,7 @@ extension ChooseSpeakerViewController: UITableViewDelegate, UITableViewDataSourc
             let name = cell.nameLabel.text
             selectedSpeaker = Speaker.selectName(by: name ?? "Milena")
             UserDefaults.standard.set(selectedSpeaker, forKey: UserDefaults.selectedSpeaker)
+            
         }
         tableView.reloadData()
     }

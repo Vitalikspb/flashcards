@@ -23,6 +23,7 @@ extension AppSource.Color  {
         .init(light: .hex("e5e9f5"),
               dark:  .hex("1a2b47"))
     }
+    
     static var blueTextColor: UIColor {
         .init(light: .hex("3b82f6"),
               dark:  .hex("3b82f6"))
@@ -55,6 +56,10 @@ extension AppSource.Color  {
     static var whiteColor: UIColor {
         .init(light: .hex("ffffff"),
               dark:  .hex("000000"))
+    }
+    static var redColor: UIColor {
+        .init(light: UIColor.systemRed,
+              dark:  .hex("1a2b47"))
     }
     static var textColor: UIColor {
         .init(light: .hex("000000"),

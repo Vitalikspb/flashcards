@@ -16,4 +16,14 @@ enum Speaker: String, CaseIterable {
             return "ru-RU"
         }
     }
+    static func selectCountry(by name: String) -> String {
+        switch name {
+        case "en-AU" : return "Karen"
+        case "en-GB" : return "Daniel"
+        case "en-US" : return "Samantha"
+        case "ru-RU" : return "Milena"
+        default:
+            return "ru-RU"
+        }
+    }
 }

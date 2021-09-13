@@ -33,8 +33,6 @@ class ChooseGroupOfCards: PopupViewController {
     private lazy var selectedLevel = 0
     private lazy var selectedNativeLang = ""
     private lazy var selectedForeignLang = ""
-    private lazy var firstSelecterNativePicker = true
-    private lazy var firstSelecterForeignPicker = true
     private lazy var selectedIndex = IndexPath()
      
     

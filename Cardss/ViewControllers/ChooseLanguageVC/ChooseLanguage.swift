@@ -93,6 +93,7 @@ extension ChooseLanguage {
             userDefault.set(false, forKey: UserDefaults.premium)
             userDefault.set(true, forKey: UserDefaults.firstLaunchApp)
             userDefault.set(true, forKey: UserDefaults.showHints)
+            userDefault.set(Speaker.selectName(by: "Milena"), forKey: UserDefaults.selectedSpeaker)
 
             // при первом запуске задаем пустые значения всей базе
             currentCardsCollection = [

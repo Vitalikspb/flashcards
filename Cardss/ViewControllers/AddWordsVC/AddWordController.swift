@@ -149,12 +149,15 @@ private extension AddWordController {
         } else {
             // если чтото поменялось
             switch fromVC {
-            case .AddCards: doneLabel.isHidden = false
-            case .CollectionCell: doneLabel.isHidden = true
+            case .AddCards:
+                doneLabel.isHidden = false
+            case .CollectionCell:
+                doneLabel.isHidden = true
             case .none:
                 print("error")
             }
             doneLabel.text = AppSource.Text.Shared.anew
+            doneLabel.textColor = AppSource.Color.redColor
         }
         
     }
@@ -177,13 +180,14 @@ private extension AddWordController {
         let vc = ChooseGroupOfCards()
         
         
-        vc.choosenDataFile = { [weak self] (nameLang, selectedThemeTopic, selectedThemeName, level, native, foreign) in
+        vc.choosenDataFile = { [weak self] (nameLang, selectedThemeTopic, selectedThemeName, level, nativeLang, foreignLang) in
             guard let self = self else { return }
-            self.textViewTopView.text = self.setupChoosenTheme(theme: nameLang, with: native)
-            self.textViewBottomView.text = self.setupChoosenTheme(theme: nameLang, with: foreign)
+            
+            self.textViewTopView.text = self.setupChoosenTheme(theme: nameLang,
+                                                               with: nativeLang)
+            self.textViewBottomView.text = self.setupChoosenTheme(theme: nameLang,
+                                                                  with: foreignLang)
             self.name.text = selectedThemeTopic
-            self.selectedNativeLang = self.selectedLang(is: native)
-            self.selectedForeignLang = self.selectedLang(is: foreign)
             self.upperFlagTopImageView.image = Flags.setImage(with: self.selectedNativeLang)
             self.upperFlagBottomImageView.image = Flags.setImage(with: self.selectedForeignLang)
             self.theme.text = selectedThemeName
@@ -197,6 +201,7 @@ private extension AddWordController {
             self.upperlabelBottomView.isHidden = true
             self.doneLabel.isHidden = false
             self.doneLabel.text = AppSource.Text.Shared.anew
+            self.doneLabel.textColor = AppSource.Color.redColor
         }
         present(vc, animated: true, completion: nil)
     }
@@ -231,8 +236,7 @@ private extension AddWordController {
             name.isUserInteractionEnabled = true
             theme.text = ""
             theme.isUserInteractionEnabled = true
-            selectedNativeLang = AppSource.Text.languages.russian
-            selectedForeignLang =  AppSource.Text.languages.english
+            
             textViewTopView.text = ""
             upperTextViewTopView.backgroundColor = AppSource.Color.backgroundWrapperView
             upperlabelTopView.isHidden = false
@@ -241,6 +245,8 @@ private extension AddWordController {
             upperlabelBottomView.isHidden = false
             doneLabel.isHidden = true
             switchSetToOn()
+            upperFlagTopImageView.image = nil
+            upperFlagBottomImageView.image = nil
         } else {
             dismissKeyboard()
             setupDoneButton()
@@ -281,7 +287,7 @@ private extension AddWordController {
     
     func errorAlert(with text: String) {
         let alertController = CreateAlerts.errorAlert(with: AppSource.Text.Shared.error,
-                                                               and: text)
+                                                      and: text)
         present(alertController, animated: true)
     }
     
@@ -354,7 +360,7 @@ private extension AddWordController {
                 matchedNewTheme = index
             }
         }
-
+        
         if matchedNewTheme >= 0 {
             // если у нас уже есть в базе тема с текущим названием тогда добавляем коллекцию в имеющуюся тему
             switch fromVC {
@@ -393,17 +399,18 @@ private extension AddWordController {
             
         } else {
             // если у нас в базе тема с текущим названием отсутствует, тогда в базу добавляем новую тему с коллекцией
-            currentCardsCollection[0].cardsCollection!.append(CardsCollection(theme: selectedTheme,
-                                                                              info: [CollectionInfo(name: selectedName,
-                                                                                                    nativeLanguage: selectedNativeLang,
-                                                                                                    foreignLanguage: selectedForeignLang,
-                                                                                                    dateAdded: Date(),
-                                                                                                    countWords: countOfWords,
-                                                                                                    fiveStarWords: 0,
-                                                                                                    threeStarWords: 0,
-                                                                                                    oneStarWords: 0,
-                                                                                                    arrayNativeWords: tempArrayNativeWords,
-                                                                                                    arrayForeignWords: tempArrayForeignWords)]))
+            currentCardsCollection[0].cardsCollection!.append(
+                CardsCollection(theme: selectedTheme,
+                                info: [CollectionInfo(name: selectedName,
+                                                      nativeLanguage: selectedNativeLang,
+                                                      foreignLanguage: selectedForeignLang,
+                                                      dateAdded: Date(),
+                                                      countWords: countOfWords,
+                                                      fiveStarWords: 0,
+                                                      threeStarWords: 0,
+                                                      oneStarWords: 0,
+                                                      arrayNativeWords: tempArrayNativeWords,
+                                                      arrayForeignWords: tempArrayForeignWords)]))
         }
         endOfActionButton()
     }
@@ -472,29 +479,34 @@ private extension AddWordController {
 
 extension AddWordController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        doneLabel.isHidden = false
-        doneLabel.text = AppSource.Text.Shared.done
+        setupBlueTextDoneButton()
         selectedTextField = true
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         switchSetToOn()
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        doneLabel.isHidden = false
-        doneLabel.text = AppSource.Text.Shared.done
+        setupBlueTextDoneButton()
         textField.resignFirstResponder()
         return true
     }
+    
     @objc func dismissKeyboard() {
+        setupBlueTextDoneButton()
+        view.endEditing(true)
+    }
+    
+    func setupBlueTextDoneButton() {
         doneLabel.isHidden = false
         doneLabel.text = AppSource.Text.Shared.done
-        view.endEditing(true)
+        doneLabel.textColor = AppSource.Color.blueTextColor
     }
 }
 
 private extension AddWordController {
-
+    
     func setupColors() {
         view.backgroundColor = AppSource.Color.background
         topContent.backgroundColor = AppSource.Color.backgroundBottonView
@@ -502,6 +514,9 @@ private extension AddWordController {
     
     func setupProperties() {
         currentCardsCollection = UserDefaults.loadFromUD()
+        selectedNativeLang = self.currentCardsCollection[0].currentNativeLang
+        selectedForeignLang = self.currentCardsCollection[0].currentForeignLang
+        
         guard let indexPathStrong = indexPath else { return }
         guard let currentCards = currentCardsCollection[0].cardsCollection?[indexPathStrong.section] else { return }
         theme.text = currentCards.theme
@@ -520,10 +535,6 @@ private extension AddWordController {
         foreignText.removeLast()
         textViewTopView.text = nativeText
         textViewBottomView.text = foreignText
-        selectedNativeLang = currentCards.info[indexPathStrong.row].nativeLanguage
-        selectedForeignLang = currentCards.info[indexPathStrong.row].foreignLanguage
-        self.upperFlagTopImageView.image = Flags.setImage(with: selectedNativeLang)
-        self.upperFlagBottomImageView.image = Flags.setImage(with: selectedForeignLang)
     }
     
     func setupView() {

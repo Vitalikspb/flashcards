@@ -70,15 +70,15 @@ class AddTextViewController: UIViewController {
         let frame = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         
         UIView.animate(withDuration: 2.5) {
-            var heightSize = 65
+            var heightSize = 40
             if UIScreen.main.bounds.height <= DeviceHeight.iphoneSE.rawValue {
-                heightSize = 205
+                heightSize = 150
             } else if UIScreen.main.bounds.height <= DeviceHeight.iphone6s.rawValue {
-                heightSize = 120
-            } else if UIScreen.main.bounds.height <= DeviceHeight.iphoneX.rawValue {
-                heightSize = 125
-            } else if UIScreen.main.bounds.height <= DeviceHeight.iphone11.rawValue {
                 heightSize = 65
+            } else if UIScreen.main.bounds.height <= DeviceHeight.iphoneX.rawValue {
+                heightSize = 70
+            } else if UIScreen.main.bounds.height <= DeviceHeight.iphone11.rawValue {
+                heightSize = 40
             }
             self.mainTextView.snp.remakeConstraints {
                 $0.top.equalTo(self.headerTitleStick.snp.bottom).offset(15)
